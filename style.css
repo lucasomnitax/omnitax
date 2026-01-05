@@ -275,105 +275,27 @@ html {
   border-radius: 2px;
 }
 
-/* Botão Flutuante */
-#chat-widget-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #cd4b2d;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  z-index: 200;
-  transition: transform 0.3s;
+body {
+  --sb-track-color: #232e33;
+  --sb-thumb-color: #6baf8d;
+  --sb-size: 14px;
 }
 
-#chat-widget-button:hover {
-  transform: scale(1.1);
+body::-webkit-scrollbar {
+  width: var(--sb-size);
 }
 
-/* Janela do Chat */
-#chat-window {
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  width: 350px;
-  height: 500px;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  display: none;
-  flex-direction: column;
-  overflow: hidden;
-  z-index: 200;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+body::-webkit-scrollbar-track {
+  background: #E8E8E8;
 }
 
-.chat-header {
-  background: #19213a;
-  color: white;
-  padding: 15px;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#chat-messages {
-  flex: 1;
-  padding: 15px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background: #f9fafb;
-}
-
-.message {
-  padding: 10px 15px;
-  border-radius: 15px;
-  max-width: 80%;
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-.bot-msg {
-  background: #e5e7eb;
-  color: #19213a;
-  align-self: flex-start;
-}
-.user-msg {
+body::-webkit-scrollbar-thumb {
   background: #cd4b2d;
-  color: white;
-  align-self: flex-end;
-}
-
-.chat-input-area {
-  padding: 15px;
-  border-top: 1px solid #eee;
-  display: flex;
-  gap: 10px;
-}
-
-#chat-input {
-  flex: 1;
-  border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 8px;
-  outline: none;
 }
 
-#chat-send {
-  color: #cd4b2d;
-  cursor: pointer;
-  font-size: 20px;
-  border: none;
-  background: none;
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
 }
