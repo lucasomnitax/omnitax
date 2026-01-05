@@ -13,11 +13,17 @@
       tailwind.config = {
         theme: {
           extend: {
-            animation: { loopscroll: "loopscroll 20s linear infinite" },
+            animation: {
+              // Aumentei o tempo para 40s para ficar mais elegante,
+              // já que agora temos muitos logos.
+              loopscroll: "loopscroll 40s linear infinite",
+            },
             keyframes: {
               loopscroll: {
+                // Importante: translateX(-100%) se refere ao
+                // elemento individual (a div interna), garantindo o encaixe.
                 "0%": { transform: "translateX(0)" },
-                "100%": { transform: "translateX(-50%)" },
+                "100%": { transform: "translateX(-100%)" },
               },
             },
           },
@@ -907,266 +913,216 @@
           ILS FONT CONFIANCE À OMNITAX
         </h2>
       </div>
-      <div class="flex overflow-hidden space-x-16 py-5 reveal-right">
-        <div class="flex space-x-16 animate-loopscroll">
+
+      <div class="flex overflow-hidden py-5 reveal-right">
+        <div
+          class="flex items-center gap-16 px-8 animate-loopscroll flex-shrink-0"
+        >
           <img
-            loading="lazy"
             src="assets/logos/Americanas-Logo-Branca.png"
             class="max-w-none h-12"
             alt="Americanas"
           />
           <img
-            loading="lazy"
             src="assets/logos/Ammo Logo Branca.png"
             class="max-w-none h-12"
-            alt="Ammo Varejo"
+            alt="Ammo"
           />
           <img
-            loading="lazy"
             src="assets/logos/Artex Logo Branca.png"
             class="max-w-none h-12"
             alt="Artex"
           />
           <img
-            loading="lazy"
             src="assets/logos/bat-logo.png"
             class="max-w-none h-12"
             alt="BAT"
           />
           <img
-            loading="lazy"
             src="assets/logos/biscoite-logo.png"
             class="max-w-none h-12"
             alt="Biscoite"
           />
           <img
-            loading="lazy"
             src="assets/logos/brk-logo.png"
             class="max-w-none h-12"
             alt="BRK"
           />
           <img
-            loading="lazy"
             src="assets/logos/conteminas-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Conteminas"
           />
           <img
-            loading="lazy"
             src="assets/logos/dufry-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Dufry"
           />
           <img
-            loading="lazy"
             src="assets/logos/estee-lauder-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Estee Lauder"
           />
           <img
-            loading="lazy"
             src="assets/logos/lupo-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Lupo"
           />
           <img
-            loading="lazy"
             src="assets/logos/malwee-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Malwee"
           />
           <img
-            loading="lazy"
             src="assets/logos/mmartan-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Mmartan"
           />
-
           <img
-            loading="lazy"
             src="assets/logos/mobly-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Mobly"
           />
-
           <img
-            loading="lazy"
             src="assets/logos/nexaas-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Nexaas"
           />
-
           <img
-            loading="lazy"
             src="assets/logos/niu-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="NIU"
           />
-
           <img
-            loading="lazy"
             src="assets/logos/rihappy-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Ri Happy"
           />
-
           <img
-            loading="lazy"
             src="assets/logos/sgs-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="SGS"
           />
-
           <img
-            loading="lazy"
             src="assets/logos/stefanini-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Stefanini"
           />
-
           <img
-            loading="lazy"
             src="assets/logos/waterfy-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Waterfy"
           />
-
           <img
-            loading="lazy"
             src="assets/logos/wizos-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Wizos"
           />
         </div>
 
-        <div class="flex space-x-16 animate-loopscroll" aria-hidden="true">
+        <div
+          class="flex items-center gap-16 px-8 animate-loopscroll flex-shrink-0"
+          aria-hidden="true"
+        >
           <img
-            loading="lazy"
             src="assets/logos/Americanas-Logo-Branca.png"
             class="max-w-none h-12"
             alt="Americanas"
           />
           <img
-            loading="lazy"
             src="assets/logos/Ammo Logo Branca.png"
             class="max-w-none h-12"
-            alt="Ammo Varejo"
+            alt="Ammo"
           />
           <img
-            loading="lazy"
             src="assets/logos/Artex Logo Branca.png"
             class="max-w-none h-12"
             alt="Artex"
           />
           <img
-            loading="lazy"
             src="assets/logos/bat-logo.png"
             class="max-w-none h-12"
             alt="BAT"
           />
           <img
-            loading="lazy"
             src="assets/logos/biscoite-logo.png"
             class="max-w-none h-12"
             alt="Biscoite"
           />
           <img
-            loading="lazy"
             src="assets/logos/brk-logo.png"
             class="max-w-none h-12"
             alt="BRK"
           />
           <img
-            loading="lazy"
             src="assets/logos/conteminas-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Conteminas"
           />
           <img
-            loading="lazy"
             src="assets/logos/dufry-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Dufry"
           />
           <img
-            loading="lazy"
             src="assets/logos/estee-lauder-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Estee Lauder"
           />
           <img
-            loading="lazy"
             src="assets/logos/lupo-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Lupo"
           />
           <img
-            loading="lazy"
             src="assets/logos/malwee-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Malwee"
           />
           <img
-            loading="lazy"
             src="assets/logos/mmartan-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Mmartan"
           />
-
           <img
-            loading="lazy"
             src="assets/logos/mobly-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Mobly"
           />
-
           <img
-            loading="lazy"
             src="assets/logos/nexaas-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Nexaas"
           />
-
           <img
-            loading="lazy"
             src="assets/logos/niu-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="NIU"
           />
-
           <img
-            loading="lazy"
             src="assets/logos/rihappy-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Ri Happy"
           />
-
           <img
-            loading="lazy"
             src="assets/logos/sgs-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="SGS"
           />
-
           <img
-            loading="lazy"
             src="assets/logos/stefanini-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Stefanini"
           />
-
           <img
-            loading="lazy"
             src="assets/logos/waterfy-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Waterfy"
           />
-
           <img
-            loading="lazy"
             src="assets/logos/wizos-logo.png"
             class="max-w-none h-12"
-            alt=""
+            alt="Wizos"
           />
         </div>
       </div>
