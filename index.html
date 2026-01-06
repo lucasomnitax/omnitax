@@ -17,14 +17,10 @@
         theme: {
           extend: {
             animation: {
-              // Aumentei o tempo para 40s para ficar mais elegante,
-              // já que agora temos muitos logos.
               loopscroll: "loopscroll 40s linear infinite",
             },
             keyframes: {
               loopscroll: {
-                // Importante: translateX(-100%) se refere ao
-                // elemento individual (a div interna), garantindo o encaixe.
                 "0%": { transform: "translateX(0)" },
                 "100%": { transform: "translateX(-100%)" },
               },

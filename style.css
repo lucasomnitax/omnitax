@@ -153,6 +153,13 @@ nav ul {
   z-index: -1;
 } */
 
+body,
+html {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
 .animation {
   opacity: 0;
   transition: 600ms ease;
@@ -286,7 +293,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #E8E8E8;
+  background: #e8e8e8;
 }
 
 body::-webkit-scrollbar-thumb {
