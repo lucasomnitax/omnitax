@@ -43,10 +43,6 @@
     <title>Omnitax</title>
 
     <style>
-      body {
-        font-family: "Open Sans", sans-serif;
-      }
-
       /* Classes de estado ativo */
       .active-card {
         background-color: #cd4b2d !important;
@@ -100,7 +96,7 @@
           <div
             class="cursor-pointer hover:text-[#cd4b2d] transition-colors flex gap-1 items-center py-2"
           >
-            Produto
+            Soluções
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -123,7 +119,7 @@
             >
               <li>
                 <a
-                  href="https://www.omnitax.ai/solucoes-fiscais-inteligentes"
+                  href="motor-de-calculo.html"
                   class="block px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
                 >
                   <span
@@ -335,14 +331,267 @@
         <img
           src="assets/omnitax-header-image-01.png"
           alt="Omnitax Header"
-          class="w-[85%] md:w-auto md:h-[90%] object-contain object-right transform md:translate-x-[10%] lg:translate-x-[5%]"
+          class="w-[85%] md:w-auto md:h-[90%] object-contain object-right transform md:translate-x-[10%] lg:translate-x-[5%] select-none"
+          draggable="false"
         />
       </div>
     </header>
 
-    <div class="w-full bg-[#CD4B2D] p-5"></div>
+    <div class="w-full bg-white p-5"></div>
 
     <!-- Sections -->
+    <section
+      class="relative py-24 md:py-32 overflow-hidden flex items-center min-h-[600px]"
+    >
+      <div class="absolute inset-0 z-0">
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-[#19213A] via-[#19213A]/90 to-[#19213A]/60 z-10"
+        ></div>
+
+        <img
+          src="https://plus.unsplash.com/premium_photo-1661443983727-fed85c988924?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Gestão Tributária Complexa"
+          class="w-full h-full object-cover grayscale opacity-34 scale-x-[-1]"
+        />
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-20">
+        <div class="lg:w-2/3 xl:w-1/2 reveal">
+          <h2
+            class="text-3xl md:text-5xl font-bold leading-tight mb-6 text-white"
+          >
+            O custo oculto de
+            <span class="text-[#cd4b2d] block md:inline"
+              >tentar fazer tudo dentro de casa</span
+            >
+          </h2>
+
+          <p class="text-gray-200 text-lg md:text-xl mb-8 leading-relaxed">
+            Manter um motor de cálculo interno ou gerenciar tributos via
+            planilhas não é apenas difícil; é um risco operacional. Como filtrar
+            e sistematizar alterações diárias sem perder o foco no seu
+            <strong>DNA Tributário</strong>?
+          </p>
+
+          <div
+            class="space-y-4 border-l-4 border-[#cd4b2d] pl-6 italic text-gray-300 bg-black/20 py-4 pr-4 rounded-r-lg"
+          >
+            <p class="text-base md:text-lg leading-relaxed">
+              "O maior desafio da Reforma é a mecânica complexa de vincular o
+              token de pagamento ao documento eletrônico em tempo real."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="w-full bg-[#CD4B2D] p-5"></div>
+
+    <section
+      class="relative py-24 md:py-40 overflow-hidden font-['Open_Sans'] bg-white"
+    >
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1644325349124-d1756b79dd42?q=80&w=1175&auto=format&fit=crop"
+          alt="Background"
+          class="w-full h-full object-cover grayscale opacity-[0.97] mix-blend-luminosity pointer-events-none"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-[#F8FAFC]/80 via-white/95 to-[#F8FAFC]/80"
+        ></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-24 reveal">
+          <span
+            class="text-[#cd4b2d] font-bold text-sm uppercase tracking-[0.3em] mb-4 block"
+            >Diagnóstico Operacional</span
+          >
+          <h2
+            class="text-4xl md:text-6xl font-extrabold text-[#19213A] tracking-tighter leading-none mb-8"
+          >
+            Sua rotina tributária <span class="text-[#cd4b2d]">em xeque</span>
+          </h2>
+          <p
+            class="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
+          >
+            Selecione um dos pilares abaixo para visualizar o impacto real na
+            sua operação atual.
+          </p>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-12 items-stretch">
+          <div class="w-full lg:w-[45%] flex flex-col gap-5">
+            <button
+              onclick="showPainel(1)"
+              id="btn-1"
+              class="painel-btn active-painel group relative overflow-hidden flex items-center gap-6 p-8 rounded-[2rem] bg-white border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 text-left"
+            >
+              <div
+                class="icon-wrapper w-14 h-14 bg-gray-50 text-[#19213A] flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform duration-500 shadow-sm"
+              >
+                <i class="fas fa-table text-xl"></i>
+              </div>
+              <div class="flex flex-col">
+                <h4 class="text-xl font-bold text-[#19213A] leading-tight">
+                  Ditadura das Planilhas
+                </h4>
+                <span
+                  class="text-xs text-gray-400 mt-1 uppercase tracking-widest font-semibold opacity-0 group-[.active-painel]:opacity-100 transition-opacity"
+                  >Selecionado</span
+                >
+              </div>
+            </button>
+
+            <button
+              onclick="showPainel(2)"
+              id="btn-2"
+              class="painel-btn group relative overflow-hidden flex items-center gap-6 p-8 rounded-[2rem] bg-white border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 text-left"
+            >
+              <div
+                class="icon-wrapper w-14 h-14 bg-gray-50 text-[#19213A] flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform duration-500 shadow-sm"
+              >
+                <i class="fas fa-hand-holding-usd text-xl"></i>
+              </div>
+              <h4 class="text-xl font-bold text-[#19213A]">
+                Crédito Tributário
+              </h4>
+            </button>
+
+            <button
+              onclick="showPainel(3)"
+              id="btn-3"
+              class="painel-btn group relative overflow-hidden flex items-center gap-6 p-8 rounded-[2rem] bg-white border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 text-left"
+            >
+              <div
+                class="icon-wrapper w-14 h-14 bg-gray-50 text-[#19213A] flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform duration-500 shadow-sm"
+              >
+                <i class="fas fa-microchip text-xl"></i>
+              </div>
+              <h4 class="text-xl font-bold text-[#19213A]">
+                Dreno de Recursos Tech
+              </h4>
+            </button>
+
+            <button
+              onclick="showPainel(4)"
+              id="btn-4"
+              class="painel-btn group relative overflow-hidden flex items-center gap-6 p-8 rounded-[2rem] bg-white border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 text-left"
+            >
+              <div
+                class="icon-wrapper w-14 h-14 bg-gray-50 text-[#19213A] flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform duration-500 shadow-sm"
+              >
+                <i class="fas fa-balance-scale text-xl"></i>
+              </div>
+              <h4 class="text-xl font-bold text-[#19213A]">
+                Incerteza da Reforma
+              </h4>
+            </button>
+          </div>
+
+          <div
+            class="w-full lg:w-[55%] min-h-[450px] bg-white rounded-[3rem] p-10 md:p-16 text-white relative flex items-center overflow-hidden shadow-[0_30px_60px_rgba(3,8,38,0.3)]"
+          >
+            <div
+              class="absolute -top-20 -right-20 w-64 h-64 bg-[#cd4b2d] opacity-10 blur-[100px]"
+            ></div>
+
+            <div id="content-1" class="painel-content block space-y-6">
+              <div
+                class="inline-block px-4 py-1 rounded-full bg-[#cd4b2d]/10 border border-[#cd4b2d]/20 text-[#cd4b2d] text-xs font-bold tracking-widest uppercase"
+              >
+                Risco Sistêmico
+              </div>
+              <h3
+                class="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-[#cd4b2d]"
+              >
+                Planilhas manuais são o maior inimigo da sua escala.
+              </h3>
+              <p class="text-gray-500 text-lg leading-relaxed">
+                Sua equipe gasta dias interpretando alterações diárias de forma
+                manual. O risco de erro humano em cálculos complexos expõe sua
+                empresa a multas e ineficiência. A Omnitax automatiza essa
+                sistematização em segundos via No-Code.
+              </p>
+            </div>
+
+            <div id="content-2" class="painel-content hidden space-y-6">
+              <div
+                class="inline-block px-4 py-1 rounded-full bg-[#cd4b2d]/10 border border-[#cd4b2d]/20 text-[#cd4b2d] text-xs font-bold tracking-widest uppercase"
+              >
+                Perda de Receita
+              </div>
+              <h3
+                class="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-[#cd4b2d]"
+              >
+                Onde está o dinheiro que sua empresa deixa de creditar?
+              </h3>
+              <p class="text-gray-500 text-lg leading-relaxed">
+                A conexão complexa entre tokens de pagamento e documentos
+                eletrônicos impede o crédito tributário imediato. Sem
+                centralização e vínculo em tempo real, o custo operacional
+                consome sua margem de lucro.
+              </p>
+            </div>
+
+            <div id="content-3" class="painel-content hidden space-y-6">
+              <div
+                class="inline-block px-4 py-1 rounded-full bg-[#cd4b2d]/10 border border-[#cd4b2d]/20 text-[#cd4b2d] text-xs font-bold tracking-widest uppercase"
+              >
+                Eficiência Tech
+              </div>
+              <h3
+                class="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-[#cd4b2d]"
+              >
+                Seu time de tecnologia não deveria ser um suporte fiscal.
+              </h3>
+              <p class="text-gray-500 text-lg leading-relaxed">
+                Desenvolvedores seniores perdem tempo codificando regras fiscais
+                em sistemas legados. Nossa API Gateway permite que eles foquem
+                no core business enquanto a Omnitax processa eventos tributários
+                eletrônicos.
+              </p>
+            </div>
+
+            <div id="content-4" class="painel-content hidden space-y-6">
+              <div
+                class="inline-block px-4 py-1 rounded-full bg-[#cd4b2d]/10 border border-[#cd4b2d]/20 text-[#cd4b2d] text-xs font-bold tracking-widest uppercase"
+              >
+                Compliance Futuro
+              </div>
+              <h3
+                class="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-[#cd4b2d]"
+              >
+                7 anos de transição legislativa não podem parar seu negócio.
+              </h3>
+              <p class="text-gray-500 text-lg leading-relaxed">
+                A Reforma Tributária exige uma adaptação diária que motores
+                internos não suportam. A Omnitax garante governança centralizada
+                e notificações de crédito em tempo real, vinculadas diretamente
+                às APIs do Serpro/RFB.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-24 text-center">
+          <a
+            href="https://www.omnitax.ai/solucoes-fiscais-inteligentes"
+            class="group inline-flex items-center gap-6 bg-[#CD4B2D] text-white font-bold px-12 py-6 rounded-full hover:bg-white transition-all duration-500 shadow-2xl hover:shadow-white/30 hover:text-[#CD4B2D]"
+          >
+            CONHEÇA O MOTOR DE CÁLCULO
+            <div
+              class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-[#CD4B2D] group-hover:text-white transition-all"
+            >
+              <i class="fas fa-chevron-right text-xs"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="w-full bg-[#CD4B2D] p-5"></div>
+
     <section
       class="relative overflow-hidden bg-white py-16 md:py-24 lg:py-32 diagonal"
     >
@@ -354,8 +603,14 @@
             <h3
               class="font-bold text-3xl md:text-4xl lg:text-5xl text-[#19213A] leading-tight"
             >
-              A inteligência tributária adaptativa que o seu negócio exige.
+              Um hub de tax feito para se adaptar ao seu DNA tributário
             </h3>
+            <p class="py-5 text-[#19213A]">
+              Somos a 3ª geração de motor de decisão em tempo real que
+              simplifica o complexo mundo tributário e se conecta de maneira não
+              invasiva a qualquer ERP, sistema satélite, sistema legado,
+              marketplace e e-commerce, sem impactar no seu operacional.
+            </p>
           </div>
 
           <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
@@ -369,168 +624,7 @@
       </div>
     </section>
 
-    <div class="w-full bg-[#CD4B2D] p-2"></div>
-
-    <section class="py-12 px-4 sm:px-6 lg:px-8 diagonal-2">
-      <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-12">
-          <p
-            class="text-sm font-medium text-white uppercase tracking-widest reveal-right"
-          >
-            Perguntas mais frequentes
-          </p>
-          <h2
-            class="mt-2 text-3xl font-extrabold text-white sm:text-4xl reveal"
-          >
-            Perguntas e Soluções
-          </h2>
-        </div>
-
-        <div
-          id="faq-grid"
-          class="grid grid-cols-1 md:grid-cols-2 shadow-2xl overflow-hidden bg-white"
-        >
-          <div
-            class="faq-card active-card p-8 md:p-12 flex flex-col gap-4 cursor-pointer transition-all duration-300"
-          >
-            <div class="flex items-start gap-4">
-              <div
-                class="icon-box p-2 rounded-full shrink-0 transition-colors bg-[#19213A]"
-              >
-                <svg
-                  class="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  ></path>
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold leading-tight title-text">
-                O que diferencia a Omnitax de uma calculadora fiscal comum?
-              </h3>
-            </div>
-            <p class="description-text text-gray-500 leading-relaxed ml-12">
-              Diferente das "gerações passadas" que são calculadoras rígidas, a
-              Omnitax é um Motor de Decisão Universal. Isso significa que ela
-              não apenas calcula impostos, mas audita regras de negócio,
-              concilia pagamentos e funciona como um tradutor entre sistemas
-              (TL).
-            </p>
-          </div>
-
-          <div
-            class="faq-card p-8 md:p-12 border-l border-gray-100 flex flex-col gap-4 cursor-pointer transition-all duration-300"
-          >
-            <div class="flex items-start gap-4">
-              <div
-                class="icon-box p-2 rounded-full shrink-0 transition-colors bg-[#19213A]"
-              >
-                <svg
-                  class="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  ></path>
-                </svg>
-              </div>
-              <h3
-                class="text-xl font-semibold text-gray-900 leading-tight title-text"
-              >
-                Como a plataforma lida com as mudanças da Reforma Tributária?
-              </h3>
-            </div>
-            <p class="description-text text-gray-500 leading-relaxed ml-12">
-              O motor foi desenhado para a adaptação diária exigida pelos
-              próximos 7 anos de transição legislativa. Ele centraliza a
-              governança e permite alterar regras de cálculo em segundos,
-              garantindo agilidade frente aos novos requerimentos técnicos.
-            </p>
-          </div>
-
-          <div
-            class="faq-card p-8 md:p-12 border-t border-gray-100 flex flex-col gap-4 cursor-pointer transition-all duration-300"
-          >
-            <div class="flex items-start gap-4">
-              <div
-                class="icon-box p-2 rounded-full shrink-0 transition-colors bg-[#19213A]"
-              >
-                <svg
-                  class="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  ></path>
-                </svg>
-              </div>
-              <h3
-                class="text-xl font-semibold text-gray-900 leading-tight title-text"
-              >
-                Eu preciso da equipe de TI para mudar uma regra de cálculo?
-              </h3>
-            </div>
-            <p class="description-text text-gray-500 leading-relaxed ml-12">
-              Não. O grande diferencial da Omnitax é a Autonomia No-Code. O
-              próprio usuário da área fiscal ou tributária pode criar lógicas e
-              fórmulas em tempo real sem precisar programar ou depender do
-              departamento de TI.
-            </p>
-          </div>
-
-          <div
-            class="faq-card p-8 md:p-12 border-t border-l border-gray-100 flex flex-col gap-4 cursor-pointer transition-all duration-300"
-          >
-            <div class="flex items-start gap-4">
-              <div
-                class="icon-box p-2 rounded-full shrink-0 transition-colors bg-[#19213A]"
-              >
-                <svg
-                  class="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  ></path>
-                </svg>
-              </div>
-              <h3
-                class="text-xl font-semibold text-gray-900 leading-tight title-text"
-              >
-                A Omnitax substitui o meu ERP atual (como SAP)?
-              </h3>
-            </div>
-            <p class="description-text text-gray-500 leading-relaxed ml-12">
-              Não, ela o potencializa. Através de nossa API Gateway, a
-              tecnologia se integra ao seu ambiente atual (ERP, PDV ou TMS),
-              funcionando como um cérebro externo que processa eventos
-              eletrônicos em tempo real.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="w-full bg-[#CD4B2D] p-5"></div>
 
     <section class="py-20 bg-white text-[#19213A] overflow-hidden">
       <div class="reveal max-w-7xl mx-auto px-6">
@@ -818,6 +912,167 @@
               </a>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 px-4 sm:px-6 lg:px-8 diagonal-2">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <p
+            class="text-sm font-medium text-white uppercase tracking-widest reveal-right"
+          >
+            Perguntas mais frequentes
+          </p>
+          <h2
+            class="mt-2 text-3xl font-extrabold text-white sm:text-4xl reveal"
+          >
+            Perguntas e Soluções
+          </h2>
+        </div>
+
+        <div
+          id="faq-grid"
+          class="grid grid-cols-1 md:grid-cols-2 shadow-2xl overflow-hidden bg-white"
+        >
+          <div
+            class="faq-card active-card p-8 md:p-12 flex flex-col gap-4 cursor-pointer transition-all duration-300"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="icon-box p-2 rounded-full shrink-0 transition-colors bg-[#19213A]"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold leading-tight title-text">
+                O que diferencia a Omnitax de uma calculadora fiscal comum?
+              </h3>
+            </div>
+            <p class="description-text text-gray-500 leading-relaxed ml-12">
+              Diferente das "gerações passadas" que são calculadoras rígidas, a
+              Omnitax é um Motor de Decisão Universal. Isso significa que ela
+              não apenas calcula impostos, mas audita regras de negócio,
+              concilia pagamentos e funciona como um tradutor entre sistemas
+              (TL).
+            </p>
+          </div>
+
+          <div
+            class="faq-card p-8 md:p-12 border-l border-gray-100 flex flex-col gap-4 cursor-pointer transition-all duration-300"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="icon-box p-2 rounded-full shrink-0 transition-colors bg-[#19213A]"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3
+                class="text-xl font-semibold text-gray-900 leading-tight title-text"
+              >
+                Como a plataforma lida com as mudanças da Reforma Tributária?
+              </h3>
+            </div>
+            <p class="description-text text-gray-500 leading-relaxed ml-12">
+              O motor foi desenhado para a adaptação diária exigida pelos
+              próximos 7 anos de transição legislativa. Ele centraliza a
+              governança e permite alterar regras de cálculo em segundos,
+              garantindo agilidade frente aos novos requerimentos técnicos.
+            </p>
+          </div>
+
+          <div
+            class="faq-card p-8 md:p-12 border-t border-gray-100 flex flex-col gap-4 cursor-pointer transition-all duration-300"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="icon-box p-2 rounded-full shrink-0 transition-colors bg-[#19213A]"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3
+                class="text-xl font-semibold text-gray-900 leading-tight title-text"
+              >
+                Eu preciso da equipe de TI para mudar uma regra de cálculo?
+              </h3>
+            </div>
+            <p class="description-text text-gray-500 leading-relaxed ml-12">
+              Não. O grande diferencial da Omnitax é a Autonomia No-Code. O
+              próprio usuário da área fiscal ou tributária pode criar lógicas e
+              fórmulas em tempo real sem precisar programar ou depender do
+              departamento de TI.
+            </p>
+          </div>
+
+          <div
+            class="faq-card p-8 md:p-12 border-t border-l border-gray-100 flex flex-col gap-4 cursor-pointer transition-all duration-300"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="icon-box p-2 rounded-full shrink-0 transition-colors bg-[#19213A]"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3
+                class="text-xl font-semibold text-gray-900 leading-tight title-text"
+              >
+                A Omnitax substitui o meu ERP atual (como SAP)?
+              </h3>
+            </div>
+            <p class="description-text text-gray-500 leading-relaxed ml-12">
+              Não, ela o potencializa. Através de nossa API Gateway, a
+              tecnologia se integra ao seu ambiente atual (ERP, PDV ou TMS),
+              funcionando como um cérebro externo que processa eventos
+              eletrônicos em tempo real.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -1226,10 +1481,10 @@
               <p
                 class="text-white mt-10 text-lg md:text-[19px] leading-snug opacity-90"
               >
-                Agende uma demonstração com um<br />
-                dos nossos especialistas<br />
-                e descubra como<br />
-                podemos ajudar sua empresa!
+                Agende uma demonstração<br />
+                com um dos nossos especialistas<br />
+                e descubra como podemos ajudar<br />
+                sua empresa!
               </p>
             </div>
           </div>

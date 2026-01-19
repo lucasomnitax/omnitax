@@ -1,0 +1,1398 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Open+Sans:wght@300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Motor de Cálculo de 3ª Geração | Omnitax</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              loopscroll: "loopscroll 40s linear infinite",
+              fadeIn: "fadeIn 0.6s ease-out forwards",
+            },
+            keyframes: {
+              loopscroll: {
+                "0%": { transform: "translateX(0)" },
+                "100%": { transform: "translateX(-100%)" },
+              },
+              fadeIn: {
+                from: { opacity: 0, transform: "translateY(20px)" },
+                to: { opacity: 1, transform: "translateY(0)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .active-painel {
+        border-color: #cd4b2d !important;
+        background-color: white !important;
+        transform: scale(1.03) translateX(15px);
+        z-index: 20;
+      }
+      .active-painel .icon-wrapper {
+        background-color: #cd4b2d !important;
+        color: white !important;
+      }
+    </style>
+  </head>
+
+  <body
+    class="min-h-screen overflow-x-hidden relative bg-gradient-to-r from-[#030826] via-[#010618] to-[#030000]"
+  >
+    <!-- NAVBAR -->
+    <nav
+      id="main-nav"
+      class="fixed top-0 left-0 w-full flex items-center justify-between px-6 md:px-16 py-5 text-white z-[100] transition-all duration-300"
+    >
+      <div class="flex-shrink-0">
+        <a href="/index.html"
+          ><img
+            src="./assets/Logo-OMNITAX_simples-mono.png"
+            alt="logo"
+            class="w-[120px] md:w-[150px]"
+        /></a>
+      </div>
+
+      <ul
+        class="hidden lg:flex items-center gap-8 xl:gap-16 text-[16px] xl:text-[18px] font-bold"
+      >
+        <li class="cursor-pointer hover:text-[#cd4b2d] transition-colors">
+          <a href="https://www.omnitax.ai/sobre-nos">Por que nós?</a>
+        </li>
+
+        <li class="relative group">
+          <div
+            class="cursor-pointer hover:text-[#cd4b2d] transition-colors flex gap-1 items-center py-2"
+          >
+            Soluções
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6 transition-transform group-hover:rotate-180"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m19.5 8.25-7.5 7.5-7.5-7.5"
+              />
+            </svg>
+          </div>
+
+          <div class="absolute left-0 top-full hidden group-hover:block pt-2">
+            <ul
+              class="bg-white border border-white/10 rounded-xl shadow-2xl overflow-hidden min-w-[280px]"
+            >
+              <li>
+                <a
+                  href="motor-de-calculo.html"
+                  class="block px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
+                >
+                  <span
+                    class="text-[#cd4b2d] block text-sm uppercase tracking-wider mb-1"
+                    >Motor de Cálculo</span
+                  >
+                  <span class="text-xs text-gray-400 font-normal"
+                    >Inteligência tributária de 3ª geração.</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.omnitax.ai/conformidade-fiscal-com-automacao"
+                  class="block px-6 py-4 hover:bg-gray-50 transition-colors"
+                >
+                  <span
+                    class="text-[#cd4b2d] block text-sm uppercase tracking-wider mb-1"
+                    >Motor de Emissão e Recepção</span
+                  >
+                  <span class="text-xs text-gray-400 font-normal"
+                    >Gestão completa de documentos fiscais.</span
+                  >
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="cursor-pointer hover:text-[#cd4b2d] transition-colors">
+          <a href="https://www.omnitax.ai/bastidores-do-tributo">Omninews</a>
+        </li>
+      </ul>
+
+      <div class="flex items-center gap-4 md:gap-6">
+        <a
+          href="#form"
+          class="hidden lg:inline-block bg-[#cd4b2d] text-white px-6 py-2 rounded-full text-[16px] font-bold whitespace-nowrap transition-transform hover:scale-105"
+        >
+          AGENDE UMA DEMO
+        </a>
+        <div class="lang-selector-group">
+          <img
+            src="https://flagcdn.com/w40/br.png"
+            id="main-flag"
+            alt="Idioma"
+            class="w-8 md:w-10 h-auto rounded-full cursor-pointer border border-white/10"
+          />
+          <div class="lang-dropdown">
+            <a href="index.html" class="lang-item"
+              ><img src="https://flagcdn.com/w20/br.png" /> Português</a
+            >
+            <a href="en.html" class="lang-item"
+              ><img src="https://flagcdn.com/w20/us.png" /> English</a
+            >
+            <a href="es.html" class="lang-item"
+              ><img src="https://flagcdn.com/w20/es.png" /> Español</a
+            >
+            <a href="fr.html" class="lang-item"
+              ><img src="https://flagcdn.com/w20/fr.png" /> Français</a
+            >
+          </div>
+        </div>
+
+        <button
+          id="hamburger-btn"
+          class="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none z-[110] relative"
+        >
+          <span
+            class="w-7 h-1 bg-white rounded-full transition-all duration-300"
+            id="bar1"
+          ></span>
+          <span
+            class="w-7 h-1 bg-white rounded-full transition-all duration-300"
+            id="bar2"
+          ></span>
+          <span
+            class="w-7 h-1 bg-white rounded-full transition-all duration-300"
+            id="bar3"
+          ></span>
+        </button>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-[#19213A] flex flex-col items-center justify-center gap-8 text-2xl font-bold translate-x-full transition-transform duration-500 lg:hidden z-[105] px-6 text-center"
+      >
+        <a href="index.html">
+          <img
+            src="./assets/Logo-OMNITAX_simples-mono.png"
+            alt="logo"
+            class="w-[180px] mb-4 mx-auto"
+          />
+        </a>
+
+        <ul class="flex flex-col items-center w-full gap-8 text-white">
+          <li class="mobile-link cursor-pointer hover:text-[#cd4b2d]">
+            <a href="https://www.omnitax.ai/sobre-nos">Por que nós?</a>
+          </li>
+
+          <li class="w-full">
+            <button
+              id="mobile-product-btn"
+              class="flex items-center justify-center w-full hover:text-[#cd4b2d] gap-2"
+            >
+              Produto
+              <svg
+                id="mobile-arrow"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="size-6 transition-transform"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </button>
+
+            <div
+              id="mobile-product-list"
+              class="max-h-0 overflow-hidden transition-all duration-300 bg-white/5 mt-4 rounded-xl"
+            >
+              <ul class="flex flex-col gap-4 py-4 text-lg font-normal">
+                <li>
+                  <a
+                    href="https://www.omnitax.ai/solucoes-fiscais-inteligentes"
+                    class="hover:text-[#cd4b2d]"
+                    >Motor de Cálculo</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.omnitax.ai/conformidade-fiscal-com-automacao"
+                    class="hover:text-[#cd4b2d]"
+                    >Motor de Emissão e Recepção</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="mobile-link cursor-pointer hover:text-[#cd4b2d]">
+            <a href="https://www.omnitax.ai/bastidores-do-tributo">Omninews</a>
+          </li>
+        </ul>
+
+        <a
+          href="#form"
+          class="bg-[#cd4b2d] text-white px-10 py-4 rounded-full text-lg font-bold mt-4 uppercase"
+        >
+          Agende uma demo
+        </a>
+      </div>
+    </nav>
+
+    <header
+      class="relative flex flex-col items-center justify-center min-h-screen pt-32 md:pt-0 overflow-hidden px-6 md:px-16"
+    >
+      <div class="absolute inset-0 z-0">
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-[#030826]/80 via-[#030826]/40 to-[#030826]/80 z-10"
+        ></div>
+        <div class="absolute inset-0 bg-[#030826]/40 z-10"></div>
+
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          class="w-full h-full object-cover opacity-40 grayscale"
+        >
+          <source
+            src="assets/video/Animação De Rede Neural Omnitax (Convert).mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+
+      <div class="reveal relative z-20 text-center flex flex-col items-center">
+        <span
+          class="text-[#cd4b2d] font-mono text-sm uppercase tracking-widest mb-4 block"
+        >
+          Tecnologia Adaptativa
+        </span>
+        <h1
+          class="text-white text-4xl md:text-6xl font-bold leading-tight mb-6"
+        >
+          Motor de Cálculo<span class="block">
+            de <span class="text-[#cd4b2d]">3ª Geração</span></span
+          >
+        </h1>
+        <p
+          class="text-gray-300 text-lg md:text-xl mb-10 leading-relaxed max-w-2xl mx-auto"
+        >
+          Autonomia e agilidade para calcular impostos, adaptando-se às mudanças
+          diárias da legislação com alta conectividade e rastreabilidade total.
+        </p>
+
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a
+            href="#demo"
+            class="group relative overflow-hidden bg-[#cd4b2d] text-white px-10 py-4 rounded-full font-bold hover:scale-105 transition-all shadow-lg shadow-[#cd4b2d]/20 inline-block"
+          >
+            <span class="relative z-10">AGENDE UMA DEMO</span>
+
+            <div class="absolute inset-0 w-full h-full">
+              <div
+                class="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-25deg] transition-all duration-700 group-hover:left-[150%]"
+              ></div>
+            </div>
+          </a>
+          <a
+            href="#features"
+            class="border border-white/30 text-white px-10 py-4 rounded-full font-bold hover:bg-white/10 transition-all backdrop-blur-sm"
+          >
+            VER FUNCIONALIDADES
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section class="relative py-24 md:py-32 bg-white">
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=1600"
+          class="w-full h-full object-cover grayscale opacity-[0.05] mix-blend-multiply"
+        />
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="reveal">
+            <h2
+              class="text-[#19213A] text-3xl md:text-5xl font-bold mb-8 leading-tight"
+            >
+              Por que os motores internos
+              <span class="text-[#cd4b2d]">não suportam</span> a Reforma?
+            </h2>
+            <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+              A legislação atual permite 2,1 bilhões de combinações de
+              alíquotas. Com a Reforma, a complexidade migra para o vínculo
+              entre <strong>tokens de pagamento</strong> e documentos
+              eletrônicos.
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3 text-gray-700">
+                <i class="fas fa-times-circle text-[#cd4b2d] mt-1"></i>
+                <span
+                  ><strong>G1/G2:</strong> Dificuldade extrema em atualizações e
+                  conflitos de lógica.</span
+                >
+              </li>
+              <li class="flex items-start gap-3 text-gray-700">
+                <i class="fas fa-times-circle text-[#cd4b2d] mt-1"></i>
+                <span
+                  ><strong>Risco:</strong> O erro humano em planilhas expõe a
+                  empresa a multas e perda de créditos.</span
+                >
+              </li>
+            </ul>
+          </div>
+          <div
+            class="bg-[#19213A] p-10 rounded-[3rem] text-white shadow-2xl reveal-right"
+          >
+            <h3 class="text-2xl font-bold mb-6">O Impacto no Fluxo de Caixa</h3>
+            <p class="text-gray-400 mb-8">
+              A não cumulatividade agora é condicionada ao pagamento efetivo do
+              tributo na etapa anterior (Split Payment).
+            </p>
+            <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+              <div class="flex justify-between mb-2">
+                <span class="text-sm font-medium">Crédito Tributário</span>
+                <span class="text-[#cd4b2d] font-bold text-sm">Maximizado</span>
+              </div>
+              <div class="w-full bg-gray-700 h-3 rounded-full overflow-hidden">
+                <div
+                  class="bg-gradient-to-r from-[#cd4b2d] to-[#ff6b4a] h-full rounded-full transition-all duration-[2000ms] ease-out w-0 animate-fill-bar"
+                  style="width: 100%; transform-origin: left"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6 reveal">
+        <div class="text-center mb-20">
+          <h2 class="text-[#19213A] text-4xl md:text-5xl font-extrabold mb-6">
+            DNA Tributário <span class="text-[#cd4b2d]">Centralizado</span>
+          </h2>
+          <p class="text-gray-500 text-xl max-w-3xl mx-auto">
+            Um motor único de decisão que funciona como o cérebro tributário
+            externo do seu negócio.
+          </p>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-12 items-stretch">
+          <div class="w-full lg:w-2/5 flex flex-col gap-4">
+            <button
+              onclick="manualSelect(1)"
+              id="btn-1"
+              class="painel-btn active-painel group relative flex items-center gap-6 p-8 rounded-[2rem] bg-white border border-gray-100 shadow-sm transition-all text-left"
+            >
+              <div
+                class="icon-wrapper w-12 h-12 bg-gray-50 text-[#19213A] flex items-center justify-center rounded-xl transition-colors shrink-0"
+              >
+                <i class="fas fa-bolt"></i>
+              </div>
+              <h4 class="text-xl font-bold text-[#19213A]">
+                Agilidade No-Code
+              </h4>
+            </button>
+
+            <button
+              onclick="manualSelect(2)"
+              id="btn-2"
+              class="painel-btn group relative flex items-center gap-6 p-8 rounded-[2rem] bg-white border border-gray-100 shadow-sm transition-all text-left"
+            >
+              <div
+                class="icon-wrapper w-12 h-12 bg-gray-50 text-[#19213A] flex items-center justify-center rounded-xl transition-colors shrink-0"
+              >
+                <i class="fas fa-project-diagram"></i>
+              </div>
+              <h4 class="text-xl font-bold text-[#19213A]">
+                Integração Não Invasiva
+              </h4>
+            </button>
+
+            <button
+              onclick="manualSelect(3)"
+              id="btn-3"
+              class="painel-btn group relative flex items-center gap-6 p-8 rounded-[2rem] bg-white border border-gray-100 shadow-sm transition-all text-left"
+            >
+              <div
+                class="icon-wrapper w-12 h-12 bg-gray-50 text-[#19213A] flex items-center justify-center rounded-xl transition-colors shrink-0"
+              >
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h4 class="text-xl font-bold text-[#19213A]">
+                Rastreabilidade G3
+              </h4>
+            </button>
+          </div>
+
+          <div class="w-full lg:w-3/5 flex flex-col">
+            <div
+              class="rounded-t-[0.5rem] p-10 md:p-16 text-white relative flex items-center shadow-2xl overflow-hidden min-h-[400px] flex-grow"
+            >
+              <div
+                class="absolute -top-20 -right-20 w-64 h-64 bg-[#cd4b2d] opacity-10 blur-[100px]"
+              ></div>
+
+              <div
+                id="content-1"
+                class="painel-content block space-y-6 animate-fadeIn"
+              >
+                <span
+                  class="text-[#cd4b2d] font-mono text-xs uppercase tracking-widest"
+                  >Geração 3.0</span
+                >
+                <h3
+                  class="text-[#cd4b2d] text-3xl md:text-4xl font-bold leading-tight"
+                >
+                  Implemente em segundos, não em meses.
+                </h3>
+                <p class="text-gray-700 text-lg leading-relaxed">
+                  O motor Omnitax permite parametrizar regras de negócio e
+                  lógica tributária em minutos via No-Code, garantindo que o
+                  time fiscal tenha autonomia total sem depender da fila da TI.
+                </p>
+              </div>
+
+              <div
+                id="content-2"
+                class="painel-content hidden space-y-6 animate-fadeIn"
+              >
+                <span
+                  class="text-[#cd4b2d] font-mono text-xs uppercase tracking-widest"
+                  >Conectividade Universal</span
+                >
+                <h3
+                  class="text-[#cd4b2d] text-3xl md:text-4xl font-bold leading-tight"
+                >
+                  Clean Core para seu ERP.
+                </h3>
+                <p class="text-gray-700 text-lg leading-relaxed">
+                  Nossa API está conectada a milhares de empresas,
+                  comunicando-se via JSON com SAP, Oracle, sistemas legados e
+                  e-commerces sem impactar seu operacional transacional.
+                </p>
+              </div>
+
+              <div
+                id="content-3"
+                class="painel-content hidden space-y-6 animate-fadeIn"
+              >
+                <span
+                  class="text-[#cd4b2d] font-mono text-xs uppercase tracking-widest"
+                  >Compliance & Auditoria</span
+                >
+                <h3
+                  class="text-[#cd4b2d] text-3xl md:text-4xl font-bold leading-tight"
+                >
+                  Identificação única de eventos.
+                </h3>
+                <p class="text-gray-700 text-lg leading-relaxed">
+                  Todos os eventos na plataforma possuem códigos únicos,
+                  permitindo conciliar todas as iterações automaticamente e
+                  auditar créditos e débitos em tempo real.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="bg-[#111827] h-2 rounded-b-full overflow-hidden shadow-lg"
+            >
+              <div
+                id="main-progress-bar"
+                class="h-full bg-[#cd4b2d] transition-all"
+                style="width: 0%"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+          <div class="lg:w-1/2 reveal">
+            <h2
+              class="text-[#19213A] text-3xl md:text-5xl font-bold mb-8 leading-tight"
+            >
+              Sua estratégia de
+              <span class="text-[#cd4b2d]">Clean Core</span> começa aqui
+            </h2>
+            <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+              Não sobrecarregue seu ERP (SAP, Oracle) com customizações
+              tributárias complexas que se tornam dívidas técnicas. O Motor
+              Omnitax atua como um <strong>cérebro externo</strong>, processando
+              eventos via API e devolvendo apenas o resultado necessário para o
+              seu operacional.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div
+                class="p-6 bg-[#F8FAFC] rounded-2xl border-l-4 border-[#cd4b2d]"
+              >
+                <h4 class="font-bold text-[#19213A] mb-2">JSON Nativo</h4>
+                <p class="text-sm text-gray-500">
+                  Comunicação universal e rápida com qualquer sistema legado ou
+                  e-commerce.
+                </p>
+              </div>
+              <div
+                class="p-6 bg-[#F8FAFC] rounded-2xl border-l-4 border-[#cd4b2d]"
+              >
+                <h4 class="font-bold text-[#19213A] mb-2">Zero Invasividade</h4>
+                <p class="text-sm text-gray-500">
+                  Mantenha seu ERP padrão (Standard) e facilite upgrades
+                  futuros.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="lg:w-1/2 relative reveal-right">
+            <div class="bg-[#19213A] p-8 rounded-[3rem] shadow-2xl relative">
+              <div
+                class="absolute -top-6 -left-6 w-24 h-24 bg-[#cd4b2d] rounded-2xl flex items-center justify-center shadow-xl"
+              >
+                <i class="fas fa-plug text-white text-3xl"></i>
+              </div>
+              <div class="space-y-6 pt-8">
+                <div
+                  class="flex items-center gap-4 text-white border-b border-white/10 pb-4"
+                >
+                  <div
+                    class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-500"
+                  >
+                    ✓
+                  </div>
+                  <div>
+                    <p class="text-sm font-bold">API Gateway</p>
+                    <p class="text-xs text-gray-400">
+                      Status: Conectado (Real-time)
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-4 text-white border-b border-white/10 pb-4"
+                >
+                  <div
+                    class="w-10 h-10 rounded-full bg-[#cd4b2d]/20 flex items-center justify-center text-[#cd4b2d]"
+                  >
+                    <i class="fas fa-sync-alt animate-spin"></i>
+                  </div>
+                  <div>
+                    <p class="text-sm font-bold">Reforma Tributária</p>
+                    <p class="text-xs text-gray-400">
+                      Sincronizando novas alíquotas IBS/CBS
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-[#19213A] text-white relative overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-[#19213A]/40 z-10"></div>
+
+        <img
+          src="https://plus.unsplash.com/premium_photo-1661326237630-78fa86246b1d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Network Background"
+          class="w-full h-full object-cover grayscale opacity-20"
+        />
+      </div>
+
+      <div
+        class="absolute top-0 right-0 w-1/3 h-full skew-x-12 transform translate-x-20 z-10"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-20">
+        <div class="text-center mb-16 reveal">
+          <h2 class="text-3xl md:text-5xl font-bold mb-6">
+            Governança de
+            <span class="text-[#cd4b2d]">Créditos em Tempo Real</span>
+          </h2>
+          <p class="text-gray-400 text-xl max-w-3xl mx-auto leading-relaxed">
+            Com a LC 214/2025, o crédito tributário agora depende da liquidação
+            financeira.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+          <div
+            class="p-8 rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-500 group"
+          >
+            <h4
+              class="text-[#cd4b2d] font-bold text-lg mb-4 group-hover:scale-105 transition-transform origin-left"
+            >
+              Split Payment Inteligente
+            </h4>
+            <p class="text-gray-300 text-sm leading-relaxed">
+              Vincule automaticamente o token do pagamento ao documento
+              eletrônico. O motor Omnitax garante que a parte do fisco seja
+              transferida no ato da liquidação, liberando seu crédito
+              instantaneamente.
+            </p>
+          </div>
+
+          <div
+            class="p-8 rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-500 group"
+          >
+            <h4
+              class="text-[#cd4b2d] font-bold text-lg mb-4 group-hover:scale-105 transition-transform origin-left"
+            >
+              Cálculo de Cashback
+            </h4>
+            <p class="text-gray-300 text-sm leading-relaxed">
+              Lide com a devolução de tributos a pessoas físicas de forma
+              automatizada. Nossa plataforma já está preparada para as mecânicas
+              de cashback previstas na Reforma.
+            </p>
+          </div>
+
+          <div
+            class="p-8 rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-500 group"
+          >
+            <h4
+              class="text-[#cd4b2d] font-bold text-lg mb-4 group-hover:scale-105 transition-transform origin-left"
+            >
+              Auditoria de Eventos
+            </h4>
+            <p class="text-gray-300 text-sm leading-relaxed">
+              Identificação única de cada iteração. Concilie débitos e créditos
+              com rastreabilidade total de cada transação, eliminando o risco de
+              autuações por falta de evidência.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="motor-calculo" class="py-20 bg-white">
+      <div class="container mx-auto px-6 reveal-right">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+          <div class="w-full lg:w-1/2 order-2 lg:order-1">
+            <div
+              class="inline-block px-3 py-1 mb-4 text-sm font-semibold text-[#cd4b2d] bg-blue-50 rounded-full"
+            >
+              Tecnologia Proprietária
+            </div>
+            <h2
+              class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-6"
+            >
+              Motor de Cálculo de <br />
+              <span class="text-[#cd4b2d]">Alta Performance</span>
+            </h2>
+            <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+              Nossa solução integra um motor de cálculo robusto, capaz de
+              processar variáveis complexas com precisão absoluta. Desenvolvido
+              com foco em escalabilidade, ele garante que as operações fiscais
+              sejam rápidas, seguras e em conformidade.
+            </p>
+
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="mt-1 bg-blue-100 p-1 rounded-full">
+                  <svg
+                    class="w-4 h-4 text-[#cd4b2d]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="3"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-800">
+                    Processamento em Tempo Real
+                  </h4>
+                  <p class="text-slate-500">
+                    Respostas imediatas mesmo em grandes volumes de dados.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="mt-1 bg-blue-100 p-1 rounded-full">
+                  <svg
+                    class="w-4 h-4 text-[#cd4b2d]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="3"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-bold text-slate-800">Precisão de 99.9%</h4>
+                  <p class="text-slate-500">
+                    Algoritmos validados conforme a legislação vigente.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-1/2 order-1 lg:order-2">
+            <div class="relative">
+              <div
+                class="absolute -top-6 -right-6 w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-70"
+              ></div>
+
+              <div
+                class="relative bg-slate-100 rounded-xl p-2 shadow-2xl border border-slate-200 overflow-hidden transform hover:-translate-y-2 transition-transform duration-500"
+              >
+                <div class="flex items-center gap-2 mb-2 px-2 py-1">
+                  <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                  <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                  <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                  <span
+                    class="ml-2 text-[10px] font-mono text-slate-400 uppercase tracking-widest"
+                    >Omnitax Core Engine</span
+                  >
+                </div>
+                <img
+                  src="assets/Mockup Motor.png"
+                  alt="Mockup do Motor de Cálculo Omnitax"
+                  class="rounded-lg w-full shadow-inner border border-slate-200"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="py-24 md:py-32 bg-[#F8FAFC] overflow-hidden font-['Open_Sans']"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+          <div class="w-full lg:w-1/2 relative reveal">
+            <div
+              class="absolute -inset-10 bg-[#cd4b2d]/5 blur-[100px] rounded-full"
+            ></div>
+
+            <div
+              class="relative z-10 bg-[#19213A] p-8 md:p-12 rounded-[3.5rem] shadow-[0_50px_100px_-20px_rgba(3,8,38,0.25)] border border-white/10"
+            >
+              <div class="flex flex-col gap-4">
+                <div
+                  class="flex items-center justify-between bg-white/5 p-6 rounded-3xl border border-white/5 backdrop-blur-sm"
+                >
+                  <div class="flex items-center gap-5">
+                    <div
+                      class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center shadow-inner"
+                    >
+                      <i class="fas fa-server text-gray-400"></i>
+                    </div>
+                    <div>
+                      <p
+                        class="text-xs font-bold text-[#cd4b2d] uppercase tracking-[0.2em] mb-1"
+                      >
+                        Seu Ecossistema
+                      </p>
+                      <p class="text-lg font-bold text-white tracking-tight">
+                        ERP (SAP, Oracle, TOTVS)
+                      </p>
+                    </div>
+                  </div>
+                  <div class="hidden md:block">
+                    <span
+                      class="px-3 py-1 rounded-full bg-green-500/10 text-green-500 text-[10px] font-bold uppercase tracking-widest border border-green-500/20"
+                      >Clean Core</span
+                    >
+                  </div>
+                </div>
+
+                <div class="flex justify-center py-2">
+                  <div
+                    class="h-16 w-1 bg-gradient-to-b from-[#cd4b2d] to-[#e85938] rounded-full relative overflow-hidden"
+                  >
+                    <div
+                      class="absolute inset-0 bg-white/40 animate-connect-flow"
+                    ></div>
+                  </div>
+                </div>
+
+                <div
+                  class="bg-gradient-to-br from-[#cd4b2d] to-[#e85938] p-8 rounded-[2.5rem] shadow-[0_20px_40px_rgba(205,75,45,0.3)] transform hover:scale-[1.02] transition-transform duration-500 relative group"
+                >
+                  <div
+                    class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity rounded-[2.5rem]"
+                  ></div>
+                  <div class="flex items-center gap-6 relative z-10">
+                    <div
+                      class="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center text-white shadow-lg backdrop-blur-md"
+                    >
+                      <i class="fas fa-brain text-2xl"></i>
+                    </div>
+                    <div class="text-white">
+                      <h4 class="text-2xl font-black tracking-tighter">
+                        API Gateway Omnitax
+                      </h4>
+                      <p class="text-sm opacity-90 font-medium tracking-wide">
+                        Inteligência de 3ª Geração • Real-time
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex justify-center py-2">
+                  <div
+                    class="h-16 w-1 bg-gradient-to-b from-[#e85938] to-gray-600 rounded-full relative overflow-hidden"
+                  >
+                    <div
+                      class="absolute inset-0 bg-white/40 animate-connect-flow-delayed"
+                    ></div>
+                  </div>
+                </div>
+
+                <div
+                  class="flex items-center gap-5 bg-black/20 p-6 rounded-3xl border border-white/5"
+                >
+                  <div
+                    class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center"
+                  >
+                    <i class="fas fa-landmark-flag text-gray-500"></i>
+                  </div>
+                  <div>
+                    <p
+                      class="text-sm font-bold text-white uppercase tracking-tight"
+                    >
+                      Governo Digital
+                    </p>
+                    <p class="text-xs text-gray-500 font-mono">
+                      Serpro / CG IBS / CBS Compliance
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-1/2 reveal-right">
+            <div
+              class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#cd4b2d]/10 border border-[#cd4b2d]/20 mb-8"
+            >
+              <div
+                class="w-2 h-2 rounded-full bg-[#cd4b2d] animate-pulse"
+              ></div>
+              <span
+                class="text-[#cd4b2d] font-bold text-xs uppercase tracking-widest"
+                >Conectividade Universal</span
+              >
+            </div>
+
+            <h2
+              class="text-4xl md:text-5xl font-black text-[#19213A] leading-[1.1] mb-8 tracking-tighter"
+            >
+              Mantenha o seu ERP <span class="text-[#cd4b2d]">padrão</span> e
+              sua gestão <span class="text-[#cd4b2d]">estratégica.</span>
+            </h2>
+
+            <div class="space-y-8">
+              <p class="text-gray-600 text-lg leading-relaxed">
+                O erro das tecnologias G1 e G2 é invadir o núcleo do seu sistema
+                legado. A Omnitax atua como um
+                <strong>cérebro externo</strong> (API Gateway), processando
+                eventos e devolvendo decisões em milissegundos, sem gerar dívida
+                técnica.
+              </p>
+
+              <div class="grid gap-6">
+                <div
+                  class="flex gap-5 p-6 rounded-3xl bg-white border border-gray-100 hover:shadow-xl transition-all duration-500"
+                >
+                  <div
+                    class="shrink-0 w-10 h-10 rounded-xl bg-[#cd4b2d]/10 flex items-center justify-center text-[#cd4b2d]"
+                  >
+                    <i class="fas fa-check-double"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-[#19213A] mb-1">
+                      Arquitetura Clean Core
+                    </h4>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                      Reduza drasticamente as customizações no SAP/Oracle.
+                      Mantenha seu núcleo limpo para facilitar upgrades e
+                      segurança.
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class="flex gap-5 p-6 rounded-3xl bg-white border border-gray-100 hover:shadow-xl transition-all duration-500"
+                >
+                  <div
+                    class="shrink-0 w-10 h-10 rounded-xl bg-[#cd4b2d]/10 flex items-center justify-center text-[#cd4b2d]"
+                  >
+                    <i class="fas fa-microchip"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-[#19213A] mb-1">
+                      Escalabilidade Infinita
+                    </h4>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                      Preparado para os picos de processamento da transição
+                      tributária entre 2026 e 2033 sem perda de performance.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="py-12 md:py-16 bg-[linear-gradient(34deg,#12141C_0%,#19213A_50%,#0E0E0F_100%)] text-white relative overflow-hidden font-['Open_Sans']"
+    >
+      <div
+        class="absolute bottom-1/4 -right-20 w-64 h-64 bg-blue-600/10 blur-[100px] rounded-full"
+      ></div>
+
+      <div class="max-w-6xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-12 reveal">
+          <span
+            class="text-[#cd4b2d] font-mono text-xs uppercase tracking-[0.3em] mb-2 block"
+            >Lei Complementar nº 214/2025</span
+          >
+          <h2 class="text-2xl md:text-4xl font-bold leading-tight mb-4">
+            A Revolução do <span class="text-[#cd4b2d]">Split Payment</span>
+          </h2>
+          <p class="text-gray-400 text-base max-w-2xl mx-auto">
+            Com a Reforma, o crédito tributário depende da liquidação financeira
+            vinculada ao documento eletrônico.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div
+            class="relative bg-white/5 border border-white/10 rounded-[2rem] p-6 md:p-8 shadow-2xl overflow-hidden reveal"
+          >
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-xl"
+                >
+                  <i class="fas fa-wallet text-[#cd4b2d]"></i>
+                </div>
+                <div class="flex-grow">
+                  <div class="flex justify-between mb-1">
+                    <span
+                      class="text-[10px] font-bold uppercase tracking-widest text-gray-400"
+                      >Liquidação Financeira</span
+                    >
+                    <span
+                      id="status-payment"
+                      class="text-[10px] text-[#cd4b2d] animate-pulse"
+                      >Processando...</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-white/10 h-1 rounded-full overflow-hidden"
+                  >
+                    <div
+                      id="bar-payment"
+                      class="bg-[#cd4b2d] h-full w-0 transition-all duration-[3000ms]"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex justify-center py-1">
+                <div
+                  class="w-8 h-8 rounded-full border border-dashed border-[#cd4b2d]/50 flex items-center justify-center animate-spin-slow"
+                >
+                  <i class="fas fa-link text-[#cd4b2d] text-xs"></i>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center text-xl"
+                >
+                  <i class="fas fa-coins text-green-500"></i>
+                </div>
+                <div class="flex-grow">
+                  <div class="flex justify-between mb-1">
+                    <span
+                      class="text-[10px] font-bold uppercase tracking-widest text-gray-400"
+                      >Apropriação de Crédito</span
+                    >
+                    <span id="status-credit" class="text-[10px] text-gray-500"
+                      >Aguardando</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-white/10 h-1 rounded-full overflow-hidden"
+                  >
+                    <div
+                      id="bar-credit"
+                      class="bg-green-500 h-full w-0 transition-all duration-[3000ms] delay-1000"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="mt-6 text-center text-xs text-gray-500 italic">
+              O motor Omnitax libera seu crédito instantaneamente.
+            </p>
+          </div>
+
+          <div class="reveal-right">
+            <h3 class="text-xl md:text-2xl font-bold mb-6">
+              Seu fluxo de caixa protegido contra o
+              <span class="text-[#cd4b2d]">caos tributário.</span>
+            </h3>
+
+            <div class="space-y-4">
+              <div class="flex gap-4">
+                <div
+                  class="shrink-0 w-10 h-10 rounded-full bg-[#cd4b2d]/10 border border-[#cd4b2d]/20 flex items-center justify-center text-[#cd4b2d] text-sm"
+                >
+                  <i class="fas fa-check"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold">Cálculo de Cashback</h4>
+                  <p class="text-gray-400 text-sm leading-snug">
+                    Gerencie a devolução de tributos conforme a nova legislação.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div
+                  class="shrink-0 w-10 h-10 rounded-full bg-[#cd4b2d]/10 border border-[#cd4b2d]/20 flex items-center justify-center text-[#cd4b2d] text-sm"
+                >
+                  <i class="fas fa-check"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold">Auditoria e Rastreabilidade</h4>
+                  <p class="text-gray-400 text-sm leading-snug">
+                    Garantia de que nenhum crédito seja perdido entre sistemas.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-white/10">
+              <p class="text-[#cd4b2d] font-bold text-lg">
+                Governança ou Caos?
+              </p>
+              <p class="text-gray-500 text-sm">
+                Garanta sua conformidade com as novas regras de 2026.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-24 bg-white font-['Open_Sans']">
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="bg-[#F8FAFC] rounded-[4rem] p-10 md:p-20 shadow-xl border border-gray-100 flex flex-col lg:flex-row items-center gap-16"
+        >
+          <div class="lg:w-1/2 reveal">
+            <h2
+              class="text-[#19213A] text-4xl font-extrabold mb-6 leading-tight"
+            >
+              A regra muda, o seu
+              <span class="text-[#cd4b2d]">motor evolui.</span>
+            </h2>
+            <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+              O cronograma da Reforma prevê a coexistência de sistemas
+              (PIS/COFINS e IBS/CBS) até 2033. Você terá dois sistemas
+              tributários rodando simultaneamente. Sua tecnologia atual aguenta
+              essa carga?
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center gap-4">
+                <div class="w-3 h-3 bg-[#cd4b2d] rounded-full"></div>
+                <span class="font-bold text-[#19213A]">2026:</span>
+                <span class="text-gray-500"
+                  >Início do IBS/CBS (0,1% e 0,9%)</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-4 border-t border-gray-200 pt-4"
+              >
+                <div class="w-3 h-3 bg-[#cd4b2d] rounded-full"></div>
+                <span class="font-bold text-[#19213A]">2027-2032:</span>
+                <span class="text-gray-500"
+                  >Transição gradual e extinção de impostos antigos</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="lg:w-1/2 flex flex-col items-center lg:items-center text-center reveal-right"
+          >
+            <img
+              class="w-24 h-24 mb-6 mx-auto"
+              src="assets/Logo-OMNITAX_icon-cor.png"
+              alt="Omnitax Icon"
+            />
+
+            <p class="text-[#19213A] font-bold text-2xl mb-8">
+              Sua empresa terá Governança ou Caos?
+            </p>
+
+            <a
+              href="/index.html"
+              class="inline-block bg-[#cd4b2d] text-white px-12 py-5 rounded-full font-bold hover:bg-[#DE5E3A] transition-all shadow-2xl"
+            >
+              GARANTIR GOVERNANÇA AGORA
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-[#19213A] text-white pt-16 pb-8 px-6 md:px-16">
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16"
+        >
+          <div class="space-y-6">
+            <img
+              src="assets/Logo-OMNITAX_simples-mono.png"
+              alt="Omnitax Logo"
+              class="w-48 h-auto"
+            />
+            <div class="flex items-center space-x-5 text-2xl">
+              <a
+                href="https://www.instagram.com/omnitax.ai/"
+                class="hover:text-[#cd4b2d] transition-colors"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/@Omnitax_ai"
+                class="hover:text-[#cd4b2d] transition-colors"
+                target="_blank"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a
+                href="https://api.whatsapp.com/send/?phone=5511966450602"
+                class="hover:text-[#cd4b2d] transition-colors"
+                target="_blank"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a
+                href="https://open.spotify.com/show/7ti6JAAqMhNASszWwxEF3w?si=364099f3e4d64b04"
+                class="hover:text-[#cd4b2d] transition-colors"
+                target="_blank"
+                ><i class="fab fa-spotify"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/company/omnitaxtecnologia/"
+                class="hover:text-[#cd4b2d] transition-colors"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-bold mb-6">Menu</h4>
+            <ul class="space-y-4 text-gray-300">
+              <li>
+                <a
+                  href="https://www.omnitax.ai/sobre-nos"
+                  class="hover:text-white transition-colors underline decoration-1 underline-offset-4"
+                  >Por que nós?</a
+                >
+              </li>
+
+              <li>
+                <a
+                  href="https://www.omnitax.ai/bastidores-do-tributo"
+                  class="hover:text-white transition-colors underline decoration-1 underline-offset-4"
+                  >Omninews</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-white transition-colors underline decoration-1 underline-offset-4"
+                  >Agende uma demo</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-bold mb-6">Soluções</h4>
+            <ul class="space-y-4 text-gray-300">
+              <li>
+                <a
+                  href="https://www.omnitax.ai/solucoes-fiscais-inteligentes"
+                  class="hover:text-white transition-colors underline decoration-1 underline-offset-4 block md:text-left"
+                  >Motor de Cálculo</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.omnitax.ai/conformidade-fiscal-com-automacao"
+                  class="hover:text-white transition-colors underline decoration-1 underline-offset-4 block md:text-left leading-tight"
+                  >Motor de Emissão e Recepção</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="space-y-8">
+            <div>
+              <h4 class="text-xl font-bold mb-6">Endereços</h4>
+              <div class="flex items-start space-x-3 text-gray-300">
+                <i class="fas fa-map-marker-alt mt-1 text-sm"></i>
+                <p class="text-sm leading-relaxed">
+                  Rua do Rócio, 199 – Vila Olímpia – SP
+                </p>
+              </div>
+              <div class="flex items-start space-x-3 text-gray-300 mt-4">
+                <i class="fas fa-map-marker-alt mt-1 text-sm"></i>
+                <p class="text-sm leading-relaxed">
+                  Rua do Carmo, 43 – Centro – RJ
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-xl font-bold mb-6">Contato</h4>
+              <div class="space-y-4">
+                <div class="flex items-center space-x-3 text-gray-300">
+                  <i class="far fa-envelope text-sm"></i>
+                  <a
+                    href="mailto:contato@omnitax.ai"
+                    class="text-sm hover:text-white transition-colors underline"
+                    >contato@omnitax.ai</a
+                  >
+                </div>
+                <div class="flex items-center space-x-3 text-gray-300">
+                  <i class="fas fa-phone-alt text-sm"></i>
+                  <span class="text-sm">+55 21 3520 5101</span>
+                </div>
+                <div class="flex items-center space-x-3 text-gray-300">
+                  <i class="fas fa-phone-alt text-sm"></i>
+                  <span class="text-sm">+55 11 2338 9583</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-white/20 text-center">
+          <p
+            class="text-[10px] md:text-xs text-gray-400 font-bold uppercase tracking-widest"
+          >
+            © 2026 OMNITAX SOFTWARE LTDA – CNPJ: 32.403.309/0001-19 – TODOS OS
+            DIREITOS RESERVADOS
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function showPainel(id) {
+        document
+          .querySelectorAll(".painel-content")
+          .forEach((c) => c.classList.replace("block", "hidden"));
+        document
+          .querySelectorAll(".painel-btn")
+          .forEach((b) => b.classList.remove("active-painel"));
+        document
+          .getElementById("content-" + id)
+          .classList.replace("hidden", "block");
+        document.getElementById("btn-" + id).classList.add("active-painel");
+      }
+
+      // Navbar Scroll Logic
+      window.addEventListener("scroll", function () {
+        const nav = document.getElementById("main-nav");
+        if (window.scrollY > 50) {
+          nav.style.backgroundColor = "#19213A";
+        } else {
+          nav.style.backgroundColor = "transparent";
+        }
+      });
+
+      (function () {
+        if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+          window.chatbase = (...arguments) => {
+            if (!window.chatbase.q) {
+              window.chatbase.q = [];
+            }
+            window.chatbase.q.push(arguments);
+          };
+          window.chatbase = new Proxy(window.chatbase, {
+            get(target, prop) {
+              if (prop === "q") {
+                return target.q;
+              }
+              return (...args) => target(prop, ...args);
+            },
+          });
+        }
+        const onLoad = function () {
+          const script = document.createElement("script");
+          script.src = "https://www.chatbase.co/embed.min.js";
+          script.id = "QUxIXv40kx53MO3tQ3bY_";
+          script.domain = "www.chatbase.co";
+          document.body.appendChild(script);
+        };
+        if (document.readyState === "complete") {
+          onLoad();
+        } else {
+          window.addEventListener("load", onLoad);
+        }
+      })();
+    </script>
+    <script src="animation.js"></script>
+    <script src="menu-mobile.js"></script>
+  </body>
+</html>
