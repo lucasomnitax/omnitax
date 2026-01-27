@@ -230,10 +230,17 @@ body {
   transform: translateX(50px);
   transition: all 1.2s ease-out;
 }
+/* Conteúdo vindo de baixo */
+.reveal-down {
+  opacity: 0;
+  transform: translateY(50px); /* Desloca 50px para baixo no estado inicial */
+  transition: all 1.2s ease-out;
+}
 
 /* Estado final para ambos (ativado via JS) */
 .reveal.active,
-.reveal-right.active {
+.reveal-right.active,
+.reveal-down.active {
   opacity: 1;
   transform: translateX(0);
 }
@@ -401,5 +408,3 @@ body::-webkit-scrollbar-thumb {
   animation: connectFlow 2s linear infinite;
   animation-delay: 1s;
 }
-
-

@@ -17,7 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }, observerOptions);
 
   // Seleciona todos os elementos que possuem uma das duas classes
-  const elementsToReveal = document.querySelectorAll(".reveal, .reveal-right");
+  const elementsToReveal = document.querySelectorAll(
+    ".reveal, .reveal-right, .reveal-down",
+  );
 
   elementsToReveal.forEach((el) => {
     revealObserver.observe(el);
@@ -59,7 +61,7 @@ const animateCounters = () => {
         }
       });
     },
-    { threshold: 0.5 }
+    { threshold: 0.5 },
   ); // Inicia quando 50% do elemento estiver visível
 
   counters.forEach((counter) => observer.observe(counter));
@@ -191,11 +193,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     },
-    { threshold: 0.5 }
+    { threshold: 0.5 },
   );
 
   const target = document.querySelector("#bar-payment").closest("section");
   if (target) observer.observe(target);
 });
-
-

@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Open+Sans:wght@300..800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
     <title>Motor de Cálculo de 3ª Geração | Omnitax</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -38,9 +38,9 @@
       class="fixed top-0 left-0 w-full flex items-center justify-between px-6 md:px-16 py-5 text-white z-[100] transition-all duration-300"
     >
       <div class="flex-shrink-0">
-        <a href="index.html"
+        <a href="../fr/home.html"
           ><img
-            src="./assets/Logo-OMNITAX_simples-mono.png"
+            src="../assets/Logo-OMNITAX_simples-mono.png"
             alt="logo"
             class="w-[120px] md:w-[150px]"
         /></a>
@@ -50,14 +50,13 @@
         class="hidden lg:flex items-center gap-8 xl:gap-16 text-[16px] xl:text-[18px] font-bold"
       >
         <li class="cursor-pointer hover:text-[#cd4b2d] transition-colors">
-          <a href="https://www.omnitax.ai/sobre-nos">Por que nós?</a>
+          <a href="https://www.omnitax.ai/sobre-nos">Pourquoi nous ?</a>
         </li>
-
         <li class="relative group">
           <div
             class="cursor-pointer hover:text-[#cd4b2d] transition-colors flex gap-1 items-center py-2"
           >
-            Soluções
+            Produit
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -73,22 +72,21 @@
               />
             </svg>
           </div>
-
           <div class="absolute left-0 top-full hidden group-hover:block pt-2">
             <ul
               class="bg-white border border-white/10 rounded-xl shadow-2xl overflow-hidden min-w-[280px]"
             >
               <li>
                 <a
-                  href="motor-de-calculo.html"
+                  href="../fr/moteur-de-calcul.html"
                   class="block px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
                 >
                   <span
                     class="text-[#cd4b2d] block text-sm uppercase tracking-wider mb-1"
-                    >Motor de Cálculo</span
+                    >Moteur de Calcul</span
                   >
                   <span class="text-xs text-gray-400 font-normal"
-                    >Inteligência tributária de 3ª geração.</span
+                    >Intelligence fiscale de 3ème génération.</span
                   >
                 </a>
               </li>
@@ -99,17 +97,16 @@
                 >
                   <span
                     class="text-[#cd4b2d] block text-sm uppercase tracking-wider mb-1"
-                    >Motor de Emissão e Recepção</span
+                    >Émission et Réception</span
                   >
                   <span class="text-xs text-gray-400 font-normal"
-                    >Gestão completa de documentos fiscais.</span
+                    >Gestion complète des documents fiscaux.</span
                   >
                 </a>
               </li>
             </ul>
           </div>
         </li>
-
         <li class="cursor-pointer hover:text-[#cd4b2d] transition-colors">
           <a href="https://www.omnitax.ai/bastidores-do-tributo">Omninews</a>
         </li>
@@ -117,29 +114,29 @@
 
       <div class="flex items-center gap-4 md:gap-6">
         <a
-          href="contato.html"
+          href="#form"
           class="hidden lg:inline-block bg-[#cd4b2d] text-white px-6 py-2 rounded-full text-[16px] font-bold whitespace-nowrap transition-transform hover:scale-105"
+          >RÉSERVER UNE DÉMO</a
         >
-          AGENDE UMA DEMO
-        </a>
+
         <div class="lang-selector-group">
           <img
-            src="https://flagcdn.com/w40/br.png"
+            src="https://flagcdn.com/w40/fr.png"
             id="main-flag"
-            alt="Idioma"
+            alt="Langue"
             class="w-8 md:w-10 h-auto rounded-full cursor-pointer border border-white/10"
           />
           <div class="lang-dropdown">
-            <a href="/motor-de-calculo.html" class="lang-item"
+            <a href="../motor-de-calculo.html" class="lang-item"
               ><img src="https://flagcdn.com/w20/br.png" /> Português</a
             >
-            <a href="/en/calculation-engine.html" class="lang-item"
+            <a href="../en/calculation-engine.html" class="lang-item"
               ><img src="https://flagcdn.com/w20/us.png" /> English</a
             >
-            <a href="/es/motor-de-calculo.html" class="lang-item"
+            <a href="../es/motor-de-calculo.html" class="lang-item"
               ><img src="https://flagcdn.com/w20/es.png" /> Español</a
             >
-            <a href="/fr/home.html" class="lang-item"
+            <a href="../fr/moteur-de-calcul.html" class="lang-item"
               ><img src="https://flagcdn.com/w20/fr.png" /> Français</a
             >
           </div>
@@ -150,15 +147,15 @@
           class="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none z-[110] relative"
         >
           <span
-            class="w-7 h-1 bg-white rounded-full transition-all duration-300"
+            class="w-7 h-1 bg-white block rounded-full transition-all duration-300"
             id="bar1"
           ></span>
           <span
-            class="w-7 h-1 bg-white rounded-full transition-all duration-300"
+            class="w-7 h-1 bg-white block rounded-full transition-all duration-300"
             id="bar2"
           ></span>
           <span
-            class="w-7 h-1 bg-white rounded-full transition-all duration-300"
+            class="w-7 h-1 bg-white block rounded-full transition-all duration-300"
             id="bar3"
           ></span>
         </button>
@@ -168,25 +165,22 @@
         id="mobile-menu"
         class="fixed inset-0 bg-[#19213A] flex flex-col items-center justify-center gap-8 text-2xl font-bold translate-x-full transition-transform duration-500 lg:hidden z-[105] px-6 text-center"
       >
-        <a href="index.html">
-          <img
-            src="./assets/Logo-OMNITAX_simples-mono.png"
+        <a href="../fr/home.html"
+          ><img
+            src="./../assets/Logo-OMNITAX_simples-mono.png"
             alt="logo"
-            class="w-[180px] mb-4 mx-auto"
-          />
-        </a>
-
-        <ul class="flex flex-col items-center w-full gap-8 text-white">
+            class="w-[200px] mb-4"
+        /></a>
+        <ul class="flex flex-col items-center w-full gap-6 text-white">
           <li class="mobile-link cursor-pointer hover:text-[#cd4b2d]">
-            <a href="https://www.omnitax.ai/sobre-nos">Por que nós?</a>
+            <a href="https://www.omnitax.ai/sobre-nos">Pourquoi nous ?</a>
           </li>
-
-          <li class="w-full">
+          <li class="w-full text-center mt-4">
             <button
               id="mobile-product-btn"
-              class="flex items-center justify-center w-full hover:text-[#cd4b2d] gap-2"
+              class="flex items-center justify-center w-full hover:text-[#cd4b2d]"
             >
-              Produto
+              Produit
               <svg
                 id="mobile-arrow"
                 xmlns="http://www.w3.org/2000/svg"
@@ -203,41 +197,37 @@
                 />
               </svg>
             </button>
-
             <div
               id="mobile-product-list"
-              class="max-h-0 overflow-hidden transition-all duration-300 bg-white/5 mt-4 rounded-xl"
+              class="max-h-0 overflow-hidden transition-all duration-300 bg-white/5 mt-4"
             >
               <ul class="flex flex-col gap-4 py-4 text-lg font-normal">
                 <li>
                   <a
-                    href="https://www.omnitax.ai/solucoes-fiscais-inteligentes"
+                    href="../fr/moteur-de-calcul.html"
                     class="hover:text-[#cd4b2d]"
-                    >Motor de Cálculo</a
+                    >Moteur de Calcul</a
                   >
                 </li>
                 <li>
                   <a
                     href="https://www.omnitax.ai/conformidade-fiscal-com-automacao"
                     class="hover:text-[#cd4b2d]"
-                    >Motor de Emissão e Recepção</a
+                    >Émission et Réception</a
                   >
                 </li>
               </ul>
             </div>
           </li>
-
           <li class="mobile-link cursor-pointer hover:text-[#cd4b2d]">
-            <a href="https://www.omnitax.ai/bastidores-do-tributo">Omninews</a>
+            <a href="#">Omninews</a>
           </li>
         </ul>
-
         <a
-          href="contato.html"
-          class="bg-[#cd4b2d] text-white px-10 py-4 rounded-full text-lg font-bold mt-4 uppercase"
+          href="#form"
+          class="bg-[#cd4b2d] text-white px-10 py-4 rounded-full text-lg font-bold mt-4"
+          >RÉSERVER UNE DÉMO</a
         >
-          Agende uma demo
-        </a>
       </div>
     </nav>
 
@@ -258,7 +248,7 @@
           class="w-full h-full object-cover opacity-40 grayscale"
         >
           <source
-            src="assets/video/Animação De Rede Neural Omnitax (Convert).mp4"
+            src="../assets/video/Animação De Rede Neural Omnitax (Convert).mp4"
             type="video/mp4"
           />
         </video>
@@ -268,28 +258,29 @@
         <span
           class="text-[#cd4b2d] font-mono text-sm uppercase tracking-widest mb-4 block"
         >
-          Tecnologia Adaptativa
+          Technologie Adaptative
         </span>
         <h1
           class="text-white text-4xl md:text-6xl font-bold leading-tight mb-6"
         >
-          Motor de Cálculo<span class="block">
-            de <span class="text-[#cd4b2d]">3ª Geração</span></span
+          Moteur de Calcul<span class="block">
+            de <span class="text-[#cd4b2d]">3e Génération</span></span
           >
         </h1>
         <p
           class="text-gray-300 text-lg md:text-xl mb-10 leading-relaxed max-w-2xl mx-auto"
         >
-          Autonomia e agilidade para calcular impostos, adaptando-se às mudanças
-          diárias da legislação com alta conectividade e rastreabilidade total.
+          Autonomie et agilité pour le calcul de vos taxes, s'adaptant aux
+          changements législatifs quotidiens avec une haute connectivité et une
+          traçabilité totale.
         </p>
 
         <div class="flex flex-wrap gap-4 justify-center">
           <a
-            href="contato.html"
+            href="#demo"
             class="group relative overflow-hidden bg-[#cd4b2d] text-white px-10 py-4 rounded-full font-bold hover:scale-105 transition-all shadow-lg shadow-[#cd4b2d]/20 inline-block"
           >
-            <span class="relative z-10">AGENDE UMA DEMO</span>
+            <span class="relative z-10">RÉSERVER UNE DÉMO</span>
 
             <div class="absolute inset-0 w-full h-full">
               <div
@@ -301,7 +292,7 @@
             href="#features"
             class="border border-white/30 text-white px-10 py-4 rounded-full font-bold hover:bg-white/10 transition-all backdrop-blur-sm"
           >
-            VER FUNCIONALIDADES
+            VOIR LES FONCTIONNALITÉS
           </a>
         </div>
       </div>
@@ -311,6 +302,7 @@
       <div class="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=1600"
+          alt="Fond de Gestion"
           class="w-full h-full object-cover grayscale opacity-[0.05] mix-blend-multiply"
         />
       </div>
@@ -321,28 +313,29 @@
             <h2
               class="text-[#19213A] text-3xl md:text-5xl font-bold mb-8 leading-tight"
             >
-              Por que os motores internos
-              <span class="text-[#cd4b2d]">não suportam</span> a Reforma?
+              Pourquoi les moteurs internes
+              <span class="text-[#cd4b2d]">ne supportent pas</span> la Réforme ?
             </h2>
             <p class="text-gray-600 text-lg mb-6 leading-relaxed">
-              A legislação atual permite 2,1 bilhões de combinações de
-              alíquotas. Com a Reforma, a complexidade migra para o vínculo
-              entre <strong>tokens de pagamento</strong> e documentos
-              eletrônicos.
+              La législation actuelle permet 2,1 milliards de combinaisons de
+              taux. Avec la Réforme, la complexité se déplace vers le lien entre
+              les <strong>jetons de paiement</strong> et les documents
+              électroniques.
             </p>
             <ul class="space-y-4">
               <li class="flex items-start gap-3 text-gray-700">
                 <i class="fas fa-times-circle text-[#cd4b2d] mt-1"></i>
                 <span
-                  ><strong>G1/G2:</strong> Dificuldade extrema em atualizações e
-                  conflitos de lógica.</span
+                  ><strong>G1/G2 :</strong> Difficulté extrême pour les mises à
+                  jour et conflits de logique.</span
                 >
               </li>
               <li class="flex items-start gap-3 text-gray-700">
                 <i class="fas fa-times-circle text-[#cd4b2d] mt-1"></i>
                 <span
-                  ><strong>Risco:</strong> O erro humano em planilhas expõe a
-                  empresa a multas e perda de créditos.</span
+                  ><strong>Risque :</strong> L'erreur humaine dans les tableurs
+                  expose l'entreprise à des amendes et à la perte de
+                  crédits.</span
                 >
               </li>
             </ul>
@@ -350,15 +343,17 @@
           <div
             class="bg-[#19213A] p-10 rounded-[3rem] text-white shadow-2xl reveal-right"
           >
-            <h3 class="text-2xl font-bold mb-6">O Impacto no Fluxo de Caixa</h3>
+            <h3 class="text-2xl font-bold mb-6">
+              L'impact sur le Flux de Trésorerie
+            </h3>
             <p class="text-gray-400 mb-8">
-              A não cumulatividade agora é condicionada ao pagamento efetivo do
-              tributo na etapa anterior (Split Payment).
+              La non-cumulativité est désormais conditionnée au paiement
+              effectif de l'impôt lors de l'étape précédente (Split Payment).
             </p>
             <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
               <div class="flex justify-between mb-2">
-                <span class="text-sm font-medium">Crédito Tributário</span>
-                <span class="text-[#cd4b2d] font-bold text-sm">Maximizado</span>
+                <span class="text-sm font-medium">Crédit Fiscal</span>
+                <span class="text-[#cd4b2d] font-bold text-sm">Maximisé</span>
               </div>
               <div class="w-full bg-gray-700 h-3 rounded-full overflow-hidden">
                 <div
@@ -376,11 +371,11 @@
       <div class="max-w-7xl mx-auto px-6 reveal">
         <div class="text-center mb-20">
           <h2 class="text-[#19213A] text-4xl md:text-5xl font-extrabold mb-6">
-            DNA Tributário <span class="text-[#cd4b2d]">Centralizado</span>
+            ADN Fiscal <span class="text-[#cd4b2d]">Centralisé</span>
           </h2>
           <p class="text-gray-500 text-xl max-w-3xl mx-auto">
-            Um motor único de decisão que funciona como o cérebro tributário
-            externo do seu negócio.
+            Un moteur de décision unique qui fait office de cerveau fiscal
+            externe pour votre entreprise.
           </p>
         </div>
 
@@ -396,9 +391,7 @@
               >
                 <i class="fas fa-bolt"></i>
               </div>
-              <h4 class="text-xl font-bold text-[#19213A]">
-                Agilidade No-Code
-              </h4>
+              <h4 class="text-xl font-bold text-[#19213A]">Agilité No-Code</h4>
             </button>
 
             <button
@@ -412,7 +405,7 @@
                 <i class="fas fa-project-diagram"></i>
               </div>
               <h4 class="text-xl font-bold text-[#19213A]">
-                Integração Não Invasiva
+                Intégration Non Intrusive
               </h4>
             </button>
 
@@ -426,9 +419,7 @@
               >
                 <i class="fas fa-shield-alt"></i>
               </div>
-              <h4 class="text-xl font-bold text-[#19213A]">
-                Rastreabilidade G3
-              </h4>
+              <h4 class="text-xl font-bold text-[#19213A]">Traçabilité G3</h4>
             </button>
           </div>
 
@@ -446,17 +437,18 @@
               >
                 <span
                   class="text-[#cd4b2d] font-mono text-xs uppercase tracking-widest"
-                  >Geração 3.0</span
+                  >Génération 3.0</span
                 >
                 <h3
                   class="text-[#cd4b2d] text-3xl md:text-4xl font-bold leading-tight"
                 >
-                  Implemente em segundos, não em meses.
+                  Implémentez en quelques secondes, pas en mois.
                 </h3>
                 <p class="text-gray-700 text-lg leading-relaxed">
-                  O motor Omnitax permite parametrizar regras de negócio e
-                  lógica tributária em minutos via No-Code, garantindo que o
-                  time fiscal tenha autonomia total sem depender da fila da TI.
+                  Le moteur Omnitax permet de paramétrer vos règles métier et
+                  votre logique fiscale en quelques minutes via le No-Code,
+                  garantissant une autonomie totale à l'équipe fiscale sans
+                  dépendre du backlog IT.
                 </p>
               </div>
 
@@ -466,17 +458,18 @@
               >
                 <span
                   class="text-[#cd4b2d] font-mono text-xs uppercase tracking-widest"
-                  >Conectividade Universal</span
+                  >Connectivité Universelle</span
                 >
                 <h3
                   class="text-[#cd4b2d] text-3xl md:text-4xl font-bold leading-tight"
                 >
-                  Clean Core para seu ERP.
+                  Clean Core pour votre ERP.
                 </h3>
                 <p class="text-gray-700 text-lg leading-relaxed">
-                  Nossa API está conectada a milhares de empresas,
-                  comunicando-se via JSON com SAP, Oracle, sistemas legados e
-                  e-commerces sem impactar seu operacional transacional.
+                  Notre API est connectée à des milliers d'entreprises,
+                  communiquant via JSON avec SAP, Oracle, les systèmes hérités
+                  et l'e-commerce sans impacter vos opérations
+                  transactionnelles.
                 </p>
               </div>
 
@@ -486,17 +479,17 @@
               >
                 <span
                   class="text-[#cd4b2d] font-mono text-xs uppercase tracking-widest"
-                  >Compliance & Auditoria</span
+                  >Conformité & Audit</span
                 >
                 <h3
                   class="text-[#cd4b2d] text-3xl md:text-4xl font-bold leading-tight"
                 >
-                  Identificação única de eventos.
+                  Identification unique des événements.
                 </h3>
                 <p class="text-gray-700 text-lg leading-relaxed">
-                  Todos os eventos na plataforma possuem códigos únicos,
-                  permitindo conciliar todas as iterações automaticamente e
-                  auditar créditos e débitos em tempo real.
+                  Tous les événements sur la plateforme possèdent des codes
+                  uniques, permettant de concilier automatiquement toutes les
+                  itérations et d'auditer les crédits et débits en temps réel.
                 </p>
               </div>
             </div>
@@ -522,33 +515,34 @@
             <h2
               class="text-[#19213A] text-3xl md:text-5xl font-bold mb-8 leading-tight"
             >
-              Sua estratégia de
-              <span class="text-[#cd4b2d]">Clean Core</span> começa aqui
+              Votre stratégie
+              <span class="text-[#cd4b2d]">Clean Core</span> commence ici
             </h2>
             <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-              Não sobrecarregue seu ERP (SAP, Oracle) com customizações
-              tributárias complexas que se tornam dívidas técnicas. O Motor
-              Omnitax atua como um <strong>cérebro externo</strong>, processando
-              eventos via API e devolvendo apenas o resultado necessário para o
-              seu operacional.
+              Ne surchargez pas votre ERP (SAP, Oracle) avec des
+              personnalisations fiscales complexes qui se transforment en dette
+              technique. Le Moteur Omnitax agit comme un
+              <strong>cerveau externe</strong>, traitant les événements via API
+              et renvoyant uniquement le résultat nécessaire à votre flux
+              opérationnel.
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div
                 class="p-6 bg-[#F8FAFC] rounded-2xl border-l-4 border-[#cd4b2d]"
               >
-                <h4 class="font-bold text-[#19213A] mb-2">JSON Nativo</h4>
+                <h4 class="font-bold text-[#19213A] mb-2">JSON Natif</h4>
                 <p class="text-sm text-gray-500">
-                  Comunicação universal e rápida com qualquer sistema legado ou
-                  e-commerce.
+                  Communication universelle et rapide avec tout système hérité
+                  ou plateforme e-commerce.
                 </p>
               </div>
               <div
                 class="p-6 bg-[#F8FAFC] rounded-2xl border-l-4 border-[#cd4b2d]"
               >
-                <h4 class="font-bold text-[#19213A] mb-2">Zero Invasividade</h4>
+                <h4 class="font-bold text-[#19213A] mb-2">Non Intrusif</h4>
                 <p class="text-sm text-gray-500">
-                  Mantenha seu ERP padrão (Standard) e facilite upgrades
-                  futuros.
+                  Préservez votre ERP standard et facilitez les futures mises à
+                  jour et la maintenance.
                 </p>
               </div>
             </div>
@@ -572,7 +566,7 @@
                   <div>
                     <p class="text-sm font-bold">API Gateway</p>
                     <p class="text-xs text-gray-400">
-                      Status: Conectado (Real-time)
+                      Statut : Connecté (Temps réel)
                     </p>
                   </div>
                 </div>
@@ -585,9 +579,9 @@
                     <i class="fas fa-sync-alt animate-spin"></i>
                   </div>
                   <div>
-                    <p class="text-sm font-bold">Reforma Tributária</p>
+                    <p class="text-sm font-bold">Réforme Fiscale</p>
                     <p class="text-xs text-gray-400">
-                      Sincronizando novas alíquotas IBS/CBS
+                      Synchronisation des nouveaux taux IBS/CBS
                     </p>
                   </div>
                 </div>
@@ -616,12 +610,12 @@
       <div class="max-w-7xl mx-auto px-6 relative z-20">
         <div class="text-center mb-16 reveal">
           <h2 class="text-3xl md:text-5xl font-bold mb-6">
-            Governança de
-            <span class="text-[#cd4b2d]">Créditos em Tempo Real</span>
+            Gouvernance des
+            <span class="text-[#cd4b2d]">Crédits en Temps Réel</span>
           </h2>
           <p class="text-gray-400 text-xl max-w-3xl mx-auto leading-relaxed">
-            Com a LC 214/2025, o crédito tributário agora depende da liquidação
-            financeira.
+            Avec la LC 214/2025, le crédit fiscal dépend désormais du règlement
+            financier.
           </p>
         </div>
 
@@ -630,13 +624,13 @@
             class="p-8 rounded-3xl bg-white backdrop-blur-sm border border-white/10"
           >
             <h4 class="text-[#cd4b2d] font-bold text-lg mb-4">
-              Split Payment Inteligente
+              Split Payment Intelligent
             </h4>
             <p class="text-gray-700 text-sm leading-relaxed">
-              Vincule automaticamente o token do pagamento ao documento
-              eletrônico. O motor Omnitax garante que a parte do fisco seja
-              transferida no ato da liquidação, liberando seu crédito
-              instantaneamente.
+              Liez automatiquement le jeton de paiement au document
+              électronique. Le moteur Omnitax garantit que la part fiscale est
+              transférée lors du règlement, libérant votre crédit
+              instantanément.
             </p>
           </div>
 
@@ -644,12 +638,12 @@
             class="p-8 rounded-3xl bg-white backdrop-blur-sm border border-white/10"
           >
             <h4 class="text-[#cd4b2d] font-bold text-lg mb-4">
-              Cálculo de Cashback
+              Calcul du Cashback
             </h4>
             <p class="text-gray-700 text-sm leading-relaxed">
-              Lide com a devolução de tributos a pessoas físicas de forma
-              automatizada. Nossa plataforma já está preparada para as mecânicas
-              de cashback previstas na Reforma.
+              Gérez le remboursement des taxes aux particuliers de manière
+              automatisée. Notre plateforme est déjà prête pour les mécanismes
+              de cashback prévus par la Réforme.
             </p>
           </div>
 
@@ -657,38 +651,38 @@
             class="p-8 rounded-3xl bg-white backdrop-blur-sm border border-white/10"
           >
             <h4 class="text-[#cd4b2d] font-bold text-lg mb-4">
-              Auditoria de Eventos
+              Audit des Événements
             </h4>
             <p class="text-gray-700 text-sm leading-relaxed">
-              Identificação única de cada iteração. Concilie débitos e créditos
-              com rastreabilidade total de cada transação, eliminando o risco de
-              autuações por falta de evidência.
+              Identification unique de chaque itération. Conciliez débits et
+              crédits avec une traçabilité totale de chaque transaction,
+              éliminant le risque de redressements par manque de preuves.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="motor-calculo" class="py-20 bg-white">
+    <section id="moteur-calcul" class="py-20 bg-white">
       <div class="container mx-auto px-6 reveal-right">
         <div class="flex flex-col lg:flex-row items-center gap-16">
           <div class="w-full lg:w-1/2 order-2 lg:order-1">
             <div
               class="inline-block px-3 py-1 mb-4 text-sm font-semibold text-[#cd4b2d] bg-blue-50 rounded-full"
             >
-              Tecnologia Proprietária
+              Technologie Propriétaire
             </div>
             <h2
               class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-6"
             >
-              Motor de Cálculo de <br />
-              <span class="text-[#cd4b2d]">Alta Performance</span>
+              Moteur de Calcul de <br />
+              <span class="text-[#cd4b2d]">Haute Performance</span>
             </h2>
             <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-              Nossa solução integra um motor de cálculo robusto, capaz de
-              processar variáveis complexas com precisão absoluta. Desenvolvido
-              com foco em escalabilidade, ele garante que as operações fiscais
-              sejam rápidas, seguras e em conformidade.
+              Notre solution intègre un moteur de calcul robuste, capable de
+              traiter des variables complexes avec une précision absolue.
+              Développé avec un accent sur l'évolutivité, il garantit que vos
+              opérations fiscales soient rapides, sécurisées et conformes.
             </p>
 
             <div class="space-y-4">
@@ -710,10 +704,11 @@
                 </div>
                 <div>
                   <h4 class="font-bold text-slate-800">
-                    Processamento em Tempo Real
+                    Traitement en Temps Réel
                   </h4>
                   <p class="text-slate-500">
-                    Respostas imediatas mesmo em grandes volumes de dados.
+                    Des réponses immédiates, même avec des volumes de données
+                    massifs.
                   </p>
                 </div>
               </div>
@@ -735,9 +730,9 @@
                   </svg>
                 </div>
                 <div>
-                  <h4 class="font-bold text-slate-800">Precisão de 99.9%</h4>
+                  <h4 class="font-bold text-slate-800">Précision de 99,9 %</h4>
                   <p class="text-slate-500">
-                    Algoritmos validados conforme a legislação vigente.
+                    Des algorithmes validés selon la législation en vigueur.
                   </p>
                 </div>
               </div>
@@ -763,8 +758,8 @@
                   >
                 </div>
                 <img
-                  src="assets/Mockup Motor.png"
-                  alt="Mockup do Motor de Cálculo Omnitax"
+                  src="../assets/Mockup Motor.png"
+                  alt="Maquette du Moteur de Calcul Omnitax"
                   class="rounded-lg w-full shadow-inner border border-slate-200"
                 />
               </div>
@@ -801,10 +796,10 @@
                       <p
                         class="text-xs font-bold text-[#cd4b2d] uppercase tracking-[0.2em] mb-1"
                       >
-                        Seu Ecossistema
+                        Votre Écosystème
                       </p>
                       <p class="text-lg font-bold text-white tracking-tight">
-                        ERP (SAP, Oracle, TOTVS)
+                        ERP (SAP, Oracle, Microsoft)
                       </p>
                     </div>
                   </div>
@@ -840,10 +835,10 @@
                     </div>
                     <div class="text-white">
                       <h4 class="text-2xl font-black tracking-tighter">
-                        API Gateway Omnitax
+                        Omnitax API Gateway
                       </h4>
                       <p class="text-sm opacity-90 font-medium tracking-wide">
-                        Inteligência de 3ª Geração • Real-time
+                        Intelligence 3G • Temps réel
                       </p>
                     </div>
                   </div>
@@ -871,10 +866,10 @@
                     <p
                       class="text-sm font-bold text-white uppercase tracking-tight"
                     >
-                      Governo Digital
+                      Gouvernement Digital
                     </p>
                     <p class="text-xs text-gray-500 font-mono">
-                      Serpro / CG IBS / CBS Compliance
+                      Conformité en temps réel avec les autorités fiscales
                     </p>
                   </div>
                 </div>
@@ -891,24 +886,25 @@
               ></div>
               <span
                 class="text-[#cd4b2d] font-bold text-xs uppercase tracking-widest"
-                >Conectividade Universal</span
+                >Connectivité Universelle</span
               >
             </div>
 
             <h2
               class="text-4xl md:text-5xl font-black text-[#19213A] leading-[1.1] mb-8 tracking-tighter"
             >
-              Mantenha o seu ERP <span class="text-[#cd4b2d]">padrão</span> e
-              sua gestão <span class="text-[#cd4b2d]">estratégica.</span>
+              Préservez votre ERP
+              <span class="text-[#cd4b2d]">standard</span> et votre gestion
+              <span class="text-[#cd4b2d]">stratégique.</span>
             </h2>
 
             <div class="space-y-8">
               <p class="text-gray-600 text-lg leading-relaxed">
-                O erro das tecnologias G1 e G2 é invadir o núcleo do seu sistema
-                legado. A Omnitax atua como um
-                <strong>cérebro externo</strong> (API Gateway), processando
-                eventos e devolvendo decisões em milissegundos, sem gerar dívida
-                técnica.
+                L'erreur des technologies G1 et G2 est d'envahir le cœur de
+                votre système hérité. Omnitax agit comme un
+                <strong>cerveau externe</strong> (API Gateway), traitant les
+                événements et renvoyant des décisions en millisecondes, sans
+                générer de dette technique.
               </p>
 
               <div class="grid gap-6">
@@ -922,12 +918,12 @@
                   </div>
                   <div>
                     <h4 class="font-bold text-[#19213A] mb-1">
-                      Arquitetura Clean Core
+                      Architecture Clean Core
                     </h4>
                     <p class="text-sm text-gray-500 leading-relaxed">
-                      Reduza drasticamente as customizações no SAP/Oracle.
-                      Mantenha seu núcleo limpo para facilitar upgrades e
-                      segurança.
+                      Réduisez drastiquement les personnalisations dans
+                      SAP/Oracle. Gardez votre cœur propre pour faciliter les
+                      futures mises à jour et la sécurité.
                     </p>
                   </div>
                 </div>
@@ -942,11 +938,12 @@
                   </div>
                   <div>
                     <h4 class="font-bold text-[#19213A] mb-1">
-                      Escalabilidade Infinita
+                      Scalabilité Infinie
                     </h4>
                     <p class="text-sm text-gray-500 leading-relaxed">
-                      Preparado para os picos de processamento da transição
-                      tributária entre 2026 e 2033 sem perda de performance.
+                      Prêt pour les pics massifs de traitement lors de la
+                      période de transition fiscale, sans aucune perte de
+                      performance.
                     </p>
                   </div>
                 </div>
@@ -968,14 +965,14 @@
         <div class="text-center mb-12 reveal">
           <span
             class="text-[#cd4b2d] font-mono text-xs uppercase tracking-[0.3em] mb-2 block"
-            >Lei Complementar nº 214/2025</span
+            >Loi Complémentaire nº 214/2025</span
           >
           <h2 class="text-2xl md:text-4xl font-bold leading-tight mb-4">
-            A Revolução do <span class="text-[#cd4b2d]">Split Payment</span>
+            La Révolution du <span class="text-[#cd4b2d]">Split Payment</span>
           </h2>
           <p class="text-gray-400 text-base max-w-2xl mx-auto">
-            Com a Reforma, o crédito tributário depende da liquidação financeira
-            vinculada ao documento eletrônico.
+            Avec la Réforme, le crédit d'impôt dépend du règlement financier lié
+            au document électronique.
           </p>
         </div>
 
@@ -994,12 +991,12 @@
                   <div class="flex justify-between mb-1">
                     <span
                       class="text-[10px] font-bold uppercase tracking-widest text-gray-400"
-                      >Liquidação Financeira</span
+                      >Règlement Financier</span
                     >
                     <span
                       id="status-payment"
                       class="text-[10px] text-[#cd4b2d] animate-pulse"
-                      >Processando...</span
+                      >En cours...</span
                     >
                   </div>
                   <div
@@ -1031,10 +1028,10 @@
                   <div class="flex justify-between mb-1">
                     <span
                       class="text-[10px] font-bold uppercase tracking-widest text-gray-400"
-                      >Apropriação de Crédito</span
+                      >Appropriation du Crédit</span
                     >
                     <span id="status-credit" class="text-[10px] text-gray-500"
-                      >Aguardando</span
+                      >En attente</span
                     >
                   </div>
                   <div
@@ -1050,14 +1047,14 @@
             </div>
 
             <p class="mt-6 text-center text-xs text-gray-500 italic">
-              O motor Omnitax libera seu crédito instantaneamente.
+              Le moteur Omnitax libère votre crédit instantanément.
             </p>
           </div>
 
           <div class="reveal-right">
             <h3 class="text-xl md:text-2xl font-bold mb-6">
-              Seu fluxo de caixa protegido contra o
-              <span class="text-[#cd4b2d]">caos tributário.</span>
+              Votre flux de trésorerie protégé contre le
+              <span class="text-[#cd4b2d]">chaos fiscal.</span>
             </h3>
 
             <div class="space-y-4">
@@ -1068,9 +1065,10 @@
                   <i class="fas fa-check"></i>
                 </div>
                 <div>
-                  <h4 class="text-lg font-bold">Cálculo de Cashback</h4>
+                  <h4 class="text-lg font-bold">Calcul du Cashback</h4>
                   <p class="text-gray-400 text-sm leading-snug">
-                    Gerencie a devolução de tributos conforme a nova legislação.
+                    Gérez le remboursement des taxes selon la nouvelle
+                    législation.
                   </p>
                 </div>
               </div>
@@ -1082,9 +1080,9 @@
                   <i class="fas fa-check"></i>
                 </div>
                 <div>
-                  <h4 class="text-lg font-bold">Auditoria e Rastreabilidade</h4>
+                  <h4 class="text-lg font-bold">Audit et Traçabilité</h4>
                   <p class="text-gray-400 text-sm leading-snug">
-                    Garantia de que nenhum crédito seja perdido entre sistemas.
+                    Garantie qu'aucun crédit ne soit perdu entre les systèmes.
                   </p>
                 </div>
               </div>
@@ -1092,16 +1090,17 @@
 
             <div class="mt-6 pt-4 border-t border-white/10">
               <p class="text-[#cd4b2d] font-bold text-lg">
-                Governança ou Caos?
+                Gouvernance ou Chaos ?
               </p>
               <p class="text-gray-500 text-sm">
-                Garanta sua conformidade com as novas regras de 2026.
+                Garantissez votre conformité avec les nouvelles règles de 2026.
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
+
     <section class="py-24 bg-white font-['Open_Sans']">
       <div class="max-w-7xl mx-auto px-6">
         <div
@@ -1111,21 +1110,21 @@
             <h2
               class="text-[#19213A] text-4xl font-extrabold mb-6 leading-tight"
             >
-              A regra muda, o seu
-              <span class="text-[#cd4b2d]">motor evolui.</span>
+              La règle change, votre
+              <span class="text-[#cd4b2d]">moteur évolue.</span>
             </h2>
             <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-              O cronograma da Reforma prevê a coexistência de sistemas
-              (PIS/COFINS e IBS/CBS) até 2033. Você terá dois sistemas
-              tributários rodando simultaneamente. Sua tecnologia atual aguenta
-              essa carga?
+              Le calendrier de la Réforme prévoit la coexistence des systèmes
+              (PIS/COFINS et IBS/CBS) jusqu'en 2033. Vous aurez deux systèmes
+              fiscaux fonctionnant simultanément. Votre technologie actuelle
+              peut-elle supporter cette charge ?
             </p>
             <div class="space-y-4">
               <div class="flex items-center gap-4">
                 <div class="w-3 h-3 bg-[#cd4b2d] rounded-full"></div>
                 <span class="font-bold text-[#19213A]">2026:</span>
                 <span class="text-gray-500"
-                  >Início do IBS/CBS (0,1% e 0,9%)</span
+                  >Lancement de l'IBS/CBS (0,1 % et 0,9 %)</span
                 >
               </div>
               <div
@@ -1134,7 +1133,7 @@
                 <div class="w-3 h-3 bg-[#cd4b2d] rounded-full"></div>
                 <span class="font-bold text-[#19213A]">2027-2032:</span>
                 <span class="text-gray-500"
-                  >Transição gradual e extinção de impostos antigos</span
+                  >Transition graduelle et suppression des anciens impôts</span
                 >
               </div>
             </div>
@@ -1145,19 +1144,19 @@
           >
             <img
               class="w-24 h-24 mb-6 mx-auto"
-              src="assets/Logo-OMNITAX_icon-cor.png"
+              src="../assets/Logo-OMNITAX_icon-cor.png"
               alt="Omnitax Icon"
             />
 
             <p class="text-[#19213A] font-bold text-2xl mb-8">
-              Sua empresa terá Governança ou Caos?
+              Votre entreprise choisira-t-elle la Gouvernance ou le Chaos ?
             </p>
 
             <a
-              href="/contato.html"
+              href="/fr.html"
               class="inline-block bg-[#cd4b2d] text-white px-12 py-5 rounded-full font-bold hover:bg-[#DE5E3A] transition-all shadow-2xl"
             >
-              GARANTIR GOVERNANÇA AGORA
+              GARANTIR LA GOUVERNANCE MAINTENANT
             </a>
           </div>
         </div>
@@ -1171,7 +1170,7 @@
         >
           <div class="space-y-6">
             <img
-              src="assets/Logo-OMNITAX_simples-mono.png"
+              src="../assets/Logo-OMNITAX_simples-mono.png"
               alt="Omnitax Logo"
               class="w-48 h-auto"
             />
@@ -1216,7 +1215,7 @@
                 <a
                   href="https://www.omnitax.ai/sobre-nos"
                   class="hover:text-white transition-colors underline decoration-1 underline-offset-4"
-                  >Por que nós?</a
+                  >Pourquoi nous ?</a
                 >
               </li>
 
@@ -1229,29 +1228,29 @@
               </li>
               <li>
                 <a
-                  href="contato.html"
+                  href="#form"
                   class="hover:text-white transition-colors underline decoration-1 underline-offset-4"
-                  >Agende uma demo</a
+                  >Réserver une démo</a
                 >
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 class="text-xl font-bold mb-6">Soluções</h4>
+            <h4 class="text-xl font-bold mb-6">Solutions</h4>
             <ul class="space-y-4 text-gray-300">
               <li>
                 <a
-                  href="https://www.omnitax.ai/solucoes-fiscais-inteligentes"
+                  href="../fr/moteur-de-calcul.html"
                   class="hover:text-white transition-colors underline decoration-1 underline-offset-4 block md:text-left"
-                  >Motor de Cálculo</a
+                  >Moteur de Calcul</a
                 >
               </li>
               <li>
                 <a
                   href="https://www.omnitax.ai/conformidade-fiscal-com-automacao"
                   class="hover:text-white transition-colors underline decoration-1 underline-offset-4 block md:text-left leading-tight"
-                  >Motor de Emissão e Recepção</a
+                  >Moteur d'Émission et de Réception</a
                 >
               </li>
             </ul>
@@ -1259,30 +1258,30 @@
 
           <div class="space-y-8">
             <div>
-              <h4 class="text-xl font-bold mb-6">Endereços</h4>
+              <h4 class="text-xl font-bold mb-6">Adresses</h4>
               <div class="flex items-start space-x-3 text-gray-300">
                 <i class="fas fa-map-marker-alt mt-1 text-sm"></i>
                 <p class="text-sm leading-relaxed">
-                  Rua do Rócio, 199 – Vila Olímpia – SP
+                  Rue do Rócio, 199 – Vila Olímpia – SP, Brésil
                 </p>
               </div>
               <div class="flex items-start space-x-3 text-gray-300 mt-4">
                 <i class="fas fa-map-marker-alt mt-1 text-sm"></i>
                 <p class="text-sm leading-relaxed">
-                  Rua do Carmo, 43 – Centro – RJ
+                  Rue do Carmo, 43 – Centro – RJ, Brésil
                 </p>
               </div>
             </div>
 
             <div>
-              <h4 class="text-xl font-bold mb-6">Contato</h4>
+              <h4 class="text-xl font-bold mb-6">Contact</h4>
               <div class="space-y-4">
                 <div class="flex items-center space-x-3 text-gray-300">
                   <i class="far fa-envelope text-sm"></i>
                   <a
                     href="mailto:contato@omnitax.ai"
                     class="text-sm hover:text-white transition-colors underline"
-                    >contato@omnitax.ai</a
+                    >contact@omnitax.ai</a
                   >
                 </div>
                 <div class="flex items-center space-x-3 text-gray-300">
@@ -1302,8 +1301,8 @@
           <p
             class="text-[10px] md:text-xs text-gray-400 font-bold uppercase tracking-widest"
           >
-            © 2026 OMNITAX SOFTWARE LTDA – CNPJ: 32.403.309/0001-19 – TODOS OS
-            DIREITOS RESERVADOS
+            © 2026 OMNITAX SOFTWARE LTDA – SIRET : 32.403.309/0001-19 – TOUS
+            DROITS RÉSERVÉS
           </p>
         </div>
       </div>
@@ -1332,7 +1331,7 @@
       }, 3500);
     </script>
 
-    <script src="menu-mobile.js" defer></script>
-    <script src="animation.js" defer></script>
+    <script src="../menu-mobile.js" defer></script>
+    <script src="../animation.js" defer></script>
   </body>
 </html>

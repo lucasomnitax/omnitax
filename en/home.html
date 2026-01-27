@@ -3,18 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
-    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             animation: {
+              // Aumentei o tempo para 40s para ficar mais elegante,
+              // já que agora temos muitos logos.
               loopscroll: "loopscroll 40s linear infinite",
             },
             keyframes: {
               loopscroll: {
+                // Importante: translateX(-100%) se refere ao
+                // elemento individual (a div interna), garantindo o encaixe.
                 "0%": { transform: "translateX(0)" },
                 "100%": { transform: "translateX(-100%)" },
               },
@@ -23,26 +30,16 @@
         },
       };
     </script>
-
-    <!-- Google Fonts -->
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap"
-      as="style"
-    />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Open+Sans:wght@300..800&display=swap"
       rel="stylesheet"
-      media="print"
-      onload="this.media = 'all'"
     />
-
-    <link rel="stylesheet" href="style.css" />
-
-    <title>Omnitax</title>
-
+    <link rel="stylesheet" href="../style.css" />
+    <title>Omnitax - Tax Intelligence</title>
     <style>
-      /* Classes de estado ativo */
+      body {
+        font-family: "Open Sans", sans-serif;
+      }
       .active-card {
         background-color: #cd4b2d !important;
         color: white !important;
@@ -50,52 +47,42 @@
       .active-card .icon-box {
         background-color: rgba(255, 255, 255, 0.2) !important;
       }
-      .active-card .icon-box svg {
-        color: white !important;
-      }
-      .active-card .title-text {
-        color: white !important;
-      }
+      .active-card .title-text,
       .active-card .description-text {
-        color: rgba(238, 242, 255, 1) !important;
+        color: white !important;
       }
     </style>
   </head>
-
   <body
     class="min-h-screen overflow-x-hidden relative bg-gradient-to-r from-[#030826] via-[#010618] to-[#030000]"
   >
-    <!-- Glow -->
     <div
       class="absolute w-[700px] h-[400px] md:w-[1200px] md:h-[600px] right-[-200px] md:right-[-40px] top-[200px] bg-[#e85938] blur-[180px] opacity-80 pointer-events-none -z-10"
     ></div>
 
-    <!-- NAVBAR -->
     <nav
       id="main-nav"
       class="fixed top-0 left-0 w-full flex items-center justify-between px-6 md:px-16 py-5 text-white z-[100] transition-all duration-300"
     >
       <div class="flex-shrink-0">
-        <a href=""
+        <a href="../en/home.html"
           ><img
-            src="./assets/Logo-OMNITAX_simples-mono.png"
+            src="../assets/Logo-OMNITAX_simples-mono.png"
             alt="logo"
             class="w-[120px] md:w-[150px]"
         /></a>
       </div>
-
       <ul
         class="hidden lg:flex items-center gap-8 xl:gap-16 text-[16px] xl:text-[18px] font-bold"
       >
         <li class="cursor-pointer hover:text-[#cd4b2d] transition-colors">
-          <a href="https://www.omnitax.ai/sobre-nos">Por que nós?</a>
+          <a href="https://www.omnitax.ai/sobre-nos">Why us?</a>
         </li>
-
         <li class="relative group">
           <div
             class="cursor-pointer hover:text-[#cd4b2d] transition-colors flex gap-1 items-center py-2"
           >
-            Soluções
+            Product
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -111,73 +98,65 @@
               />
             </svg>
           </div>
-
           <div class="absolute left-0 top-full hidden group-hover:block pt-2">
             <ul
               class="bg-white border border-white/10 rounded-xl shadow-2xl overflow-hidden min-w-[280px]"
             >
               <li>
                 <a
-                  href="motor-de-calculo.html"
+                  href="https://www.omnitax.ai/solucoes-fiscais-inteligentes"
                   class="block px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
-                >
-                  <span
+                  ><span
                     class="text-[#cd4b2d] block text-sm uppercase tracking-wider mb-1"
-                    >Motor de Cálculo</span
-                  >
-                  <span class="text-xs text-gray-400 font-normal"
-                    >Inteligência tributária de 3ª geração.</span
-                  >
-                </a>
+                    >Calculation Engine</span
+                  ><span class="text-xs text-gray-400 font-normal"
+                    >3rd generation tax intelligence.</span
+                  ></a
+                >
               </li>
               <li>
                 <a
                   href="https://www.omnitax.ai/conformidade-fiscal-com-automacao"
                   class="block px-6 py-4 hover:bg-gray-50 transition-colors"
-                >
-                  <span
+                  ><span
                     class="text-[#cd4b2d] block text-sm uppercase tracking-wider mb-1"
-                    >Motor de Emissão e Recepção</span
-                  >
-                  <span class="text-xs text-gray-400 font-normal"
-                    >Gestão completa de documentos fiscais.</span
-                  >
-                </a>
+                    >Issuance & Reception</span
+                  ><span class="text-xs text-gray-400 font-normal"
+                    >Full tax document management.</span
+                  ></a
+                >
               </li>
             </ul>
           </div>
         </li>
-
         <li class="cursor-pointer hover:text-[#cd4b2d] transition-colors">
           <a href="https://www.omnitax.ai/bastidores-do-tributo">Omninews</a>
         </li>
       </ul>
-
       <div class="flex items-center gap-4 md:gap-6">
         <a
-          href="contato.html"
+          href="#form"
           class="hidden lg:inline-block bg-[#cd4b2d] text-white px-6 py-2 rounded-full text-[16px] font-bold whitespace-nowrap transition-transform hover:scale-105"
+          >BOOK A DEMO</a
         >
-          AGENDE UMA DEMO
-        </a>
+
         <div class="lang-selector-group">
           <img
-            src="https://flagcdn.com/w40/br.png"
-            id="main-flag"
-            alt="Idioma"
+            src="https://flagcdn.com/w40/us.png"
+            alt="English"
             class="w-8 md:w-10 h-auto rounded-full cursor-pointer border border-white/10"
           />
           <div class="lang-dropdown">
-            <a href="index.html" class="lang-item"
+            <a href="../index.html" class="lang-item"
               ><img src="https://flagcdn.com/w20/br.png" /> Português</a
             >
-            <a href="/en/home.html" class="lang-item"
+            <a href="../en/home.html" class="lang-item"
               ><img src="https://flagcdn.com/w20/us.png" /> English</a
             >
-            <a href="/es/home.html" class="lang-item"
+            <a href="../es/home.html" class="lang-item"
               ><img src="https://flagcdn.com/w20/es.png" /> Español</a
             >
-            <a href="/fr/home.html" class="lang-item"
+            <a href="../fr/home.html" class="lang-item"
               ><img src="https://flagcdn.com/w20/fr.png" /> Français</a
             >
           </div>
@@ -200,86 +179,85 @@
             id="bar3"
           ></span>
         </button>
-      </div>
 
-      <div
-        id="mobile-menu"
-        class="fixed inset-0 bg-[#19213A] flex flex-col items-center justify-center gap-8 text-2xl font-bold translate-x-full transition-transform duration-500 lg:hidden z-[105] px-6 text-center"
-      >
-        <a href="index.html">
-          <img
-            src="./assets/Logo-OMNITAX_simples-mono.png"
-            alt="logo"
-            class="w-[180px] mb-4 mx-auto"
-          />
-        </a>
-
-        <ul class="flex flex-col items-center w-full gap-8 text-white">
-          <li class="mobile-link cursor-pointer hover:text-[#cd4b2d]">
-            <a href="https://www.omnitax.ai/sobre-nos">Por que nós?</a>
-          </li>
-
-          <li class="w-full">
-            <button
-              id="mobile-product-btn"
-              class="flex items-center justify-center w-full hover:text-[#cd4b2d] gap-2"
-            >
-              Produto
-              <svg
-                id="mobile-arrow"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                class="size-6 transition-transform"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                />
-              </svg>
-            </button>
-
-            <div
-              id="mobile-product-list"
-              class="max-h-0 overflow-hidden transition-all duration-300 bg-white/5 mt-4 rounded-xl"
-            >
-              <ul class="flex flex-col gap-4 py-4 text-lg font-normal">
-                <li>
-                  <a
-                    href="https://www.omnitax.ai/solucoes-fiscais-inteligentes"
-                    class="hover:text-[#cd4b2d]"
-                    >Motor de Cálculo</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="https://www.omnitax.ai/conformidade-fiscal-com-automacao"
-                    class="hover:text-[#cd4b2d]"
-                    >Motor de Emissão e Recepção</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <li class="mobile-link cursor-pointer hover:text-[#cd4b2d]">
-            <a href="https://www.omnitax.ai/bastidores-do-tributo">Omninews</a>
-          </li>
-        </ul>
-
-        <a
-          href="contato.html"
-          class="bg-[#cd4b2d] text-white px-10 py-4 rounded-full text-lg font-bold mt-4 uppercase"
+        <div
+          id="mobile-menu"
+          class="fixed inset-0 bg-[#19213A] flex flex-col items-center justify-center gap-8 text-2xl font-bold translate-x-full transition-transform duration-500 lg:hidden z-[105] px-6 text-center"
         >
-          Agende uma demo
-        </a>
+          <a href=""
+            ><img
+              src="../assets/Logo-OMNITAX_simples-mono.png"
+              alt="logo"
+              class="w-[200px] mb-4"
+          /></a>
+
+          <ul class="flex flex-col items-center w-full gap-6">
+            <li class="mobile-link cursor-pointer hover:text-[#cd4b2d]">
+              <a href="https://www.omnitax.ai/sobre-nos">Why us?</a>
+            </li>
+
+            <li class="w-full text-center mt-4">
+              <button
+                id="mobile-product-btn"
+                class="flex items-center justify-center w-full hover:text-[#cd4b2d]"
+              >
+                Product
+                <svg
+                  id="mobile-arrow"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  class="size-6 transition-transform"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
+              </button>
+
+              <div
+                id="mobile-product-list"
+                class="max-h-0 overflow-hidden transition-all duration-300 bg-white/5 mt-4"
+              >
+                <ul class="flex flex-col gap-4 py-4 text-lg font-normal">
+                  <li>
+                    <a
+                      href="https://www.omnitax.ai/solucoes-fiscais-inteligentes"
+                      class="hover:text-[#cd4b2d]"
+                      >Calculation Engine
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.omnitax.ai/conformidade-fiscal-com-automacao"
+                      class="hover:text-[#cd4b2d]"
+                      >Issuance & Reception</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="mobile-link cursor-pointer hover:text-[#cd4b2d]">
+              <a href="https://www.omnitax.ai/bastidores-do-tributo"
+                >Omninews</a
+              >
+            </li>
+          </ul>
+
+          <a
+            href="#form"
+            class="bg-[#cd4b2d] text-white px-10 py-4 rounded-full text-lg font-bold mt-4"
+            >AGENDE UMA DEMO</a
+          >
+        </div>
       </div>
     </nav>
 
-    <!-- HEADER -->
     <header
       class="relative flex flex-col md:grid md:grid-cols-2 items-center min-h-screen pt-24 md:pt-0 overflow-hidden reveal-right"
     >
@@ -290,48 +268,34 @@
           <h3
             class="text-white text-[32px] md:text-[46px] lg:text-[56px] leading-tight font-semibold"
           >
-            Um
+            A tax
             <span
-              class="text-[#cd4b2d] text-[64px] md:text-[80px] lg:text-[96px] md:block md:inline"
+              class="text-[#cd4b2d] text-[64px] md:text-[80px] lg:text-[96px]"
+              >hub</span
             >
-              hub
-            </span>
-            de tax
+            that adapts to
             <span class="block"
-              >que se <span class="text-[#cd4b2d]">adapta</span> ao</span
-            >
-            <span class="block"
-              >seu <span class="text-[#cd4b2d] auto-type">negócio</span></span
+              >your <span class="text-[#cd4b2d] auto-type">business</span></span
             >
           </h3>
-
-          <p
-            class="text-white text-[16px] md:text-[20px] mt-4 opacity-80 md:opacity-100 lg:opacity-80"
-          >
-            Desenhado para adaptar a Reforma Tributária,
-            <span class="md:block"
-              >integrando as áreas de logística, comercial e financeira em um
-              único motor de decisão.</span
-            >
+          <p class="text-white text-[16px] md:text-[20px] mt-4 opacity-80">
+            Designed to adapt to Tax Reform, integrating logistics, sales, and
+            finance into a single decision engine.
           </p>
-
           <a
-            href="contato.html"
+            href="#form"
             class="inline-block mt-8 bg-[#cd4b2d] text-white px-10 py-4 rounded-full text-[18px] font-medium transition-all hover:scale-105 hover:bg-white hover:text-[#030826]"
+            >Learn more</a
           >
-            Saiba mais
-          </a>
         </div>
       </div>
-
       <div
         class="relative flex justify-end items-center h-full order-1 md:order-2 md:opacity-30 lg:opacity-100"
       >
         <img
-          src="assets/omnitax-header-image-01.png"
+          src="../assets/omnitax-header-image-01.png"
           alt="Omnitax Header"
-          class="w-[85%] md:w-auto md:h-[90%] object-contain object-right transform md:translate-x-[10%] lg:translate-x-[5%] select-none"
-          draggable="false"
+          class="w-[85%] md:w-auto md:h-[90%] object-contain object-right transform md:translate-x-[10%] lg:translate-x-[5%]"
           fetchpriority="high"
           loading="eager"
         />
@@ -340,7 +304,6 @@
 
     <div class="w-full bg-white p-10"></div>
 
-    <!-- Sections -->
     <section
       class="relative py-24 md:py-32 overflow-hidden flex items-center min-h-[600px]"
     >
@@ -351,7 +314,7 @@
 
         <img
           src="https://plus.unsplash.com/premium_photo-1661443983727-fed85c988924?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Gestão Tributária Complexa"
+          alt="Complex Tax Management"
           class="w-full h-full object-cover grayscale opacity-34 scale-x-[-1]"
           loading="lazy"
           decoding="async"
@@ -363,25 +326,26 @@
           <h2
             class="text-3xl md:text-5xl font-bold leading-tight mb-6 text-white"
           >
-            O custo oculto de
+            The hidden cost of
             <span class="text-[#cd4b2d] block md:inline"
-              >tentar fazer tudo dentro de casa</span
+              >keeping everything in-house</span
             >
           </h2>
 
           <p class="text-gray-200 text-lg md:text-xl mb-8 leading-relaxed">
-            Manter um motor de cálculo interno ou gerenciar tributos via
-            planilhas não é apenas difícil; é um risco operacional. Como filtrar
-            e sistematizar alterações diárias sem perder o foco no seu
-            <strong>DNA Tributário</strong>?
+            Maintaining an internal calculation engine or managing taxes via
+            spreadsheets isn't just difficult; it's an operational risk. How do
+            you filter and systematize daily regulatory changes without losing
+            focus on your
+            <strong>Tax DNA</strong>?
           </p>
 
           <div
             class="space-y-4 border-l-4 border-[#cd4b2d] pl-6 italic text-gray-300 bg-black/20 py-4 pr-4 rounded-r-lg"
           >
             <p class="text-base md:text-lg leading-relaxed">
-              "O maior desafio da Reforma é a mecânica complexa de vincular o
-              token de pagamento ao documento eletrônico em tempo real."
+              "The greatest challenge of the Tax Reform is the complex mechanics
+              of linking payment tokens to electronic documents in real time."
             </p>
           </div>
         </div>
@@ -410,18 +374,18 @@
         <div class="text-center mb-24 reveal">
           <span
             class="text-[#cd4b2d] font-bold text-sm uppercase tracking-[0.3em] mb-4 block"
-            >Diagnóstico Operacional</span
+            >Operational Diagnosis</span
           >
           <h2
             class="text-4xl md:text-6xl font-extrabold text-[#19213A] tracking-tighter leading-none mb-8"
           >
-            Sua rotina tributária <span class="text-[#cd4b2d]">em xeque</span>
+            Your tax routine <span class="text-[#cd4b2d]">under check</span>
           </h2>
           <p
             class="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
           >
-            Selecione um dos pilares abaixo para visualizar o impacto real na
-            sua operação atual.
+            Select one of the pillars below to visualize the real impact on your
+            current operation.
           </p>
         </div>
 
@@ -439,11 +403,11 @@
               </div>
               <div class="flex flex-col">
                 <h4 class="text-xl font-bold text-[#19213A] leading-tight">
-                  Ditadura das Planilhas
+                  Spreadsheet Dictatorship
                 </h4>
                 <span
                   class="text-xs text-gray-400 mt-1 uppercase tracking-widest font-semibold opacity-0 group-[.active-painel]:opacity-100 transition-opacity"
-                  >Selecionado</span
+                  >Selected</span
                 >
               </div>
             </button>
@@ -458,9 +422,7 @@
               >
                 <i class="fas fa-hand-holding-usd text-xl"></i>
               </div>
-              <h4 class="text-xl font-bold text-[#19213A]">
-                Crédito Tributário
-              </h4>
+              <h4 class="text-xl font-bold text-[#19213A]">Tax Credits</h4>
             </button>
 
             <button
@@ -474,7 +436,7 @@
                 <i class="fas fa-microchip text-xl"></i>
               </div>
               <h4 class="text-xl font-bold text-[#19213A]">
-                Dreno de Recursos Tech
+                Tech Resource Drain
               </h4>
             </button>
 
@@ -489,7 +451,7 @@
                 <i class="fas fa-balance-scale text-xl"></i>
               </div>
               <h4 class="text-xl font-bold text-[#19213A]">
-                Incerteza da Reforma
+                Reform Uncertainty
               </h4>
             </button>
           </div>
@@ -505,18 +467,18 @@
               <div
                 class="inline-block px-4 py-1 rounded-full bg-[#cd4b2d]/10 border border-[#cd4b2d]/20 text-[#cd4b2d] text-xs font-bold tracking-widest uppercase"
               >
-                Risco Sistêmico
+                Systemic Risk
               </div>
               <h3
                 class="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-[#cd4b2d]"
               >
-                Planilhas manuais são o maior inimigo da sua escala.
+                Manual spreadsheets are the biggest enemy of your scaling.
               </h3>
               <p class="text-gray-500 text-lg leading-relaxed">
-                Sua equipe gasta dias interpretando alterações diárias de forma
-                manual. O risco de erro humano em cálculos complexos expõe sua
-                empresa a multas e ineficiência. A Omnitax automatiza essa
-                sistematização em segundos via No-Code.
+                Your team spends days manually interpreting daily changes. The
+                risk of human error in complex calculations exposes your company
+                to fines and inefficiency. Omnitax automates this
+                systematization in seconds via No-Code.
               </p>
             </div>
 
@@ -524,18 +486,18 @@
               <div
                 class="inline-block px-4 py-1 rounded-full bg-[#cd4b2d]/10 border border-[#cd4b2d]/20 text-[#cd4b2d] text-xs font-bold tracking-widest uppercase"
               >
-                Perda de Receita
+                Revenue Loss
               </div>
               <h3
                 class="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-[#cd4b2d]"
               >
-                Onde está o dinheiro que sua empresa deixa de creditar?
+                Where is the money your company fails to credit?
               </h3>
               <p class="text-gray-500 text-lg leading-relaxed">
-                A conexão complexa entre tokens de pagamento e documentos
-                eletrônicos impede o crédito tributário imediato. Sem
-                centralização e vínculo em tempo real, o custo operacional
-                consome sua margem de lucro.
+                The complex connection between payment tokens and electronic
+                documents prevents immediate tax credits. Without real-time
+                centralization and linking, operational costs consume your
+                profit margin.
               </p>
             </div>
 
@@ -543,18 +505,17 @@
               <div
                 class="inline-block px-4 py-1 rounded-full bg-[#cd4b2d]/10 border border-[#cd4b2d]/20 text-[#cd4b2d] text-xs font-bold tracking-widest uppercase"
               >
-                Eficiência Tech
+                Tech Efficiency
               </div>
               <h3
                 class="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-[#cd4b2d]"
               >
-                Seu time de tecnologia não deveria ser um suporte fiscal.
+                Your tech team shouldn't be a tax support desk.
               </h3>
               <p class="text-gray-500 text-lg leading-relaxed">
-                Desenvolvedores seniores perdem tempo codificando regras fiscais
-                em sistemas legados. Nossa API Gateway permite que eles foquem
-                no core business enquanto a Omnitax processa eventos tributários
-                eletrônicos.
+                Senior developers waste time coding tax rules into legacy
+                systems. Our API Gateway allows them to focus on core business
+                while Omnitax processes electronic tax events.
               </p>
             </div>
 
@@ -562,18 +523,18 @@
               <div
                 class="inline-block px-4 py-1 rounded-full bg-[#cd4b2d]/10 border border-[#cd4b2d]/20 text-[#cd4b2d] text-xs font-bold tracking-widest uppercase"
               >
-                Compliance Futuro
+                Future Compliance
               </div>
               <h3
                 class="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-[#cd4b2d]"
               >
-                7 anos de transição legislativa não podem parar seu negócio.
+                7 years of legislative transition cannot stop your business.
               </h3>
               <p class="text-gray-500 text-lg leading-relaxed">
-                A Reforma Tributária exige uma adaptação diária que motores
-                internos não suportam. A Omnitax garante governança centralizada
-                e notificações de crédito em tempo real, vinculadas diretamente
-                às APIs do Serpro/RFB.
+                Tax Reform requires daily adaptation that internal engines
+                cannot support. Omnitax ensures centralized governance and
+                real-time credit notifications, linked directly to Serpro/RFB
+                APIs.
               </p>
             </div>
           </div>
@@ -584,7 +545,7 @@
             href="https://www.omnitax.ai/solucoes-fiscais-inteligentes"
             class="group inline-flex items-center gap-6 bg-[#CD4B2D] text-white font-bold px-12 py-6 rounded-full hover:bg-white transition-all duration-500 shadow-2xl hover:shadow-white/30 hover:text-[#CD4B2D]"
           >
-            CONHEÇA O MOTOR DE CÁLCULO
+            EXPLORE CALCULATION ENGINE
             <div
               class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-[#CD4B2D] group-hover:text-white transition-all"
             >
@@ -608,20 +569,22 @@
             <h3
               class="font-bold text-3xl md:text-4xl lg:text-5xl text-[#19213A] leading-tight"
             >
-              Um hub de tax feito para se adaptar ao seu DNA tributário
+              A tax hub designed
+              <span class="block">to adapt to your unique Tax DNA</span>
             </h3>
             <p class="py-5 text-[#19213A]">
-              Somos a 3ª geração de motor de decisão em tempo real que
-              simplifica o complexo mundo tributário e se conecta de maneira não
-              invasiva a qualquer ERP, sistema satélite, sistema legado,
-              marketplace e e-commerce, sem impactar no seu operacional.
+              We are the 3rd generation of real-time decision engines that
+              simplifies the complex tax world. Our solution connects
+              non-invasively to any ERP, satellite system, legacy platform,
+              marketplace, or e-commerce, with zero impact on your operational
+              workflow.
             </p>
           </div>
 
           <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
             <img
-              src="assets/Mockup Android & Desktop.png"
-              alt="Mockup Omnitax"
+              src="../assets/Mockup Android & Desktop.png"
+              alt="Omnitax Mockup"
               class="w-full max-w-[600px] lg:max-w-none lg:w-[120%] h-auto object-contain transition-transform duration-500 hover:scale-105"
             />
           </div>
@@ -633,11 +596,11 @@
       <div class="reveal max-w-7xl mx-auto px-6">
         <div class="mb-16">
           <h2 class="text-4xl md:text-5xl font-bold leading-tight">
-            Tempo de <span class="text-[#cd4b2d]">Integração</span>
+            Integration <span class="text-[#cd4b2d]">Time</span>
           </h2>
           <p class="text-gray-700 mt-4 max-w-2xl text-lg">
-            Diferente das gerações passadas, nossa tecnologia de 3ª geração
-            transforma meses de desenvolvimento em segundos de configuração.
+            Unlike past generations, our 3rd generation technology transforms
+            months of development into seconds of configuration.
           </p>
         </div>
 
@@ -648,44 +611,42 @@
             <div
               class="text-white text-sm font-mono mb-4 uppercase tracking-widest"
             >
-              Agilidade
+              Agility
             </div>
-            <div class="text-4xl font-bold mb-2 text-white">Segundos</div>
-            <p class="text-gray-300 text-sm">
-              Para implementar novas normativas técnicas e legislativas via
+            <div class="text-4xl font-bold mb-2 text-white">Seconds</div>
+            <p class="text-gray-200 text-sm">
+              To implement new technical and legislative regulations via
               No-Code.
             </p>
           </div>
-
           <div
             class="relative p-8 bg-[#cd4b2d] rounded-2xl border-t border-white/10 group hover:border-[#cd4b2d] transition-colors"
           >
             <div
               class="text-white text-sm font-mono mb-4 uppercase tracking-widest"
             >
-              Resultado
+              Result
             </div>
             <div class="text-4xl font-bold mb-2 text-white">
               +<span class="counter" data-target="10">0</span>%
             </div>
-            <p class="text-gray-300 text-sm">
-              De ganho real em eficiência tributária logo após a integração.
+            <p class="text-gray-200 text-sm">
+              Real gain in tax efficiency immediately after integration.
             </p>
           </div>
-
           <div
             class="relative p-8 bg-[#cd4b2d] rounded-2xl border-t border-white/10 group hover:border-[#cd4b2d] transition-colors"
           >
             <div
               class="text-white text-sm font-mono mb-4 uppercase tracking-widest"
             >
-              Escala
+              Scale
             </div>
             <div class="text-4xl font-bold mb-2 text-white">
               +<span class="counter" data-target="5.5" data-suffix="k">0</span>
             </div>
-            <p class="text-gray-300 text-sm">
-              CNPJs operando em produção com rastreabilidade total de eventos.
+            <p class="text-gray-200 text-sm">
+              Tax IDs operating in production with total event traceability.
             </p>
           </div>
         </div>
@@ -695,40 +656,39 @@
         >
           <div>
             <h4 class="text-2xl font-bold mb-6 text-white">
-              Autonomia é a palavra de ordem
+              Autonomy is the watchword
             </h4>
             <ul class="space-y-4">
               <li class="flex items-start gap-3">
                 <span class="text-[#cd4b2d] mt-1">✓</span>
                 <p class="text-gray-300">
-                  Integração nativa com <strong>SAP, Oracle</strong> e sistemas
-                  de PDV via API Gateway.
+                  Native integration with <strong>SAP, Oracle</strong> and POS
+                  systems via API Gateway.
                 </p>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-[#cd4b2d] mt-1">✓</span>
                 <p class="text-gray-300">
-                  Adaptação instantânea aos próximos
-                  <strong>7 anos da Reforma Tributária</strong>.
+                  Instant adaptation to the next
+                  <strong>7 years of Tax Reform</strong>.
                 </p>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-[#cd4b2d] mt-1">✓</span>
                 <p class="text-gray-300">
-                  Motor de decisão que funciona como
-                  <strong>Tradutor (TL)</strong> entre sistemas legados.
+                  Decision engine that works as a
+                  <strong>Translator (TL)</strong> between legacy systems.
                 </p>
               </li>
             </ul>
           </div>
-
           <div class="flex justify-center md:justify-end">
             <div
               class="border-2 border-[#cd4b2d] bg-[#cd4b2d] px-8 py-6 rounded-full rotate-3 hover:rotate-0 transition-transform cursor-default"
             >
               <span
                 class="text-white font-bold text-xl uppercase tracking-tighter"
-                >Motor de 3ª Geração</span
+                >3rd Generation Engine</span
               >
             </div>
           </div>
@@ -740,48 +700,43 @@
       <div class="max-w-7xl mx-auto px-6 reveal-right">
         <div class="flex flex-col items-center mb-12 text-center">
           <h2 class="text-3xl md:text-4xl font-bold text-white uppercase">
-            Reconhecimento <span class="text-[#cd4b2d]">OMNITAX</span>
+            Recognition <span class="text-[#cd4b2d]">OMNITAX</span>
           </h2>
           <div class="h-1 w-20 bg-[#cd4b2d] mt-4"></div>
         </div>
-
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div class="order-2 lg:order-1 text-center lg:text-left">
             <h3 class="text-2xl md:text-3xl font-bold text-white mb-6">
               Prêmio Confeb 2025
             </h3>
             <p class="text-gray-300 text-lg leading-relaxed mb-8">
-              Em 2025, a Omnitax foi reconhecida pela
-              <strong>Confeb</strong> por sua excelência e inovação em
+              In 2025, Omnitax was recognized by <strong>Confeb</strong> for its
+              excellence and innovation in
               <span class="text-[#cd4b2d] font-semibold"
-                >Gestão da Reforma Tributária</span
-              >. O reconhecimento destaca nosso case de sucesso em parceria
-              estratégica com a Nexaas, reafirmando nossa posição como o motor
-              de decisão líder na 3ª geração tax.
+                >Tax Reform Management</span
+              >. The recognition highlights our success case in strategic
+              partnership with Nexaas, reaffirming our position as the leading
+              decision engine in 3rd generation tax.
             </p>
-
             <div
               class="inline-flex items-center gap-3 bg-[white] px-6 py-3 rounded-full shadow-sm border border-gray-100"
             >
               <img
-                src="assets/Logo_CONFEB_25 (blue)_.png"
-                alt="Selo Confeb"
+                src="../assets/Logo_CONFEB_25 (blue)_.png"
+                alt="Confeb Seal"
                 class="h-8 w-auto"
               />
-              <span class="text-[#19213A] font-bold text-sm"
-                >VENCEDOR 2025</span
-              >
+              <span class="text-[#19213A] font-bold text-sm">WINNER 2025</span>
             </div>
           </div>
-
           <div class="order-1 lg:order-2 flex justify-center">
             <div class="relative">
               <div
                 class="absolute -inset-4 border-4 border-white rounded-2xl -rotate-2"
               ></div>
               <img
-                src="assets/premio_confeb.jpeg"
-                alt="Cerimônia Prêmio Confeb"
+                src="../assets/premio_confeb.jpeg"
+                alt="Award Ceremony"
                 class="relative rounded-xl shadow-2xl w-full max-w-[500px] object-cover transform transition hover:scale-[1.02] duration-500"
               />
             </div>
@@ -794,11 +749,10 @@
       <div class="max-w-7xl mx-auto px-6 reveal">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold text-[#19213A]">
-            Casos de <span class="text-[#cd4b2d]">sucesso</span>
+            Success <span class="text-[#cd4b2d]">cases</span>
           </h2>
           <div class="h-1 w-20 bg-[#cd4b2d] mx-auto mt-4"></div>
         </div>
-
         <div
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center"
         >
@@ -807,7 +761,7 @@
           >
             <div class="relative h-64 overflow-hidden">
               <img
-                src="assets/nexaas-banner.png"
+                src="../assets/nexaas-banner.png"
                 alt="Nexaas"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -815,32 +769,27 @@
                 class="absolute inset-0 bg-gradient-to-t from-[#19213A] to-transparent opacity-60"
               ></div>
             </div>
-
             <div class="p-8 flex flex-col flex-grow">
               <div class="mb-6 h-12">
                 <img
-                  src="assets/nexaas-logo-normal.png"
+                  src="../assets/nexaas-logo-normal.png"
                   alt="Nexaas Logo"
                   class="h-full object-contain"
                 />
               </div>
-
               <h3 class="text-xl font-bold text-white mb-4 leading-tight">
-                Nexaas: simplificando o presente e preparando o varejo para o
-                futuro
+                Nexaas: simplifying the present and preparing retail for the
+                future
               </h3>
-
               <p class="text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
-                Descubra como a parceria entre Omnitax e Nexaas, com tecnologia
-                tributária de 3ª geração, garante agilidade, conformidade e
-                simplicidade ao varejo.
+                Discover how the partnership between Omnitax and Nexaas, with
+                3rd generation tax technology, ensures agility, compliance, and
+                simplicity for retail.
               </p>
-
               <a
                 href="https://www.omnitax.ai/casos-de-sucesso/nexaas"
-                class="inline-flex items-center text-white font-bold text-sm uppercase tracking-wider hover:text-white transition-colors"
-              >
-                Leia mais
+                class="inline-flex items-center text-white font-bold text-sm uppercase tracking-wider transition-colors"
+                >Read more
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-4 w-4 ml-2"
@@ -853,51 +802,44 @@
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </a>
+                  /></svg
+              ></a>
             </div>
           </article>
-
           <article
             class="group bg-[#cd4b2d] rounded-3xl overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col"
           >
             <div class="relative h-64 overflow-hidden">
               <img
-                src="assets/niu-banner.webp"
-                alt="NIU Stefanini"
+                src="../assets/niu-banner.webp"
+                alt="NIU"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div
                 class="absolute inset-0 bg-gradient-to-t from-[#19213A] to-transparent opacity-60"
               ></div>
             </div>
-
             <div class="p-8 flex flex-col flex-grow">
               <div class="mb-6 h-10 flex items-center">
                 <img
-                  src="assets/niu-logo-normal.webp"
+                  src="../assets/niu-logo-normal.webp"
                   alt="NIU Logo"
                   class="h-full object-contain"
                 />
               </div>
-
               <h3 class="text-xl font-bold text-white mb-4 leading-tight">
-                NIU Stefanini acelera expansão no varejo com automação fiscal da
-                Omnitax
+                NIU Stefanini accelerates retail expansion with Omnitax fiscal
+                automation
               </h3>
-
-              <p class="text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
-                Descubra como a NIU Stefanini escalou sua operação de varejo
-                nacional com o motor de cálculo tributário da Omnitax,
-                garantindo agilidade e segurança.
+              <p class="text-gray-200 text-sm leading-relaxed mb-6 flex-grow">
+                Learn how NIU Stefanini scaled its national retail operation
+                with Omnitax's tax calculation engine, ensuring agility and
+                security.
               </p>
-
               <a
                 href="https://www.omnitax.ai/casos-de-sucesso/niu"
-                class="inline-flex items-center text-white font-bold text-sm uppercase tracking-wider hover:text-white transition-colors"
-              >
-                Leia mais
+                class="inline-flex items-center text-white font-bold text-sm uppercase tracking-wider transition-colors"
+                >Read more
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-4 w-4 ml-2"
@@ -910,9 +852,8 @@
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </a>
+                  /></svg
+              ></a>
             </div>
           </article>
         </div>
@@ -925,12 +866,12 @@
           <p
             class="text-sm font-medium text-white uppercase tracking-widest reveal-right"
           >
-            Perguntas mais frequentes
+            Frequently Asked Questions
           </p>
           <h2
             class="mt-2 text-3xl font-extrabold text-white sm:text-4xl reveal"
           >
-            Perguntas e Soluções
+            Questions and Solutions
           </h2>
         </div>
 
@@ -960,15 +901,14 @@
                 </svg>
               </div>
               <h3 class="text-xl font-semibold leading-tight title-text">
-                O que diferencia a Omnitax de uma calculadora fiscal comum?
+                What differentiates Omnitax from a common tax calculator?
               </h3>
             </div>
             <p class="description-text text-gray-500 leading-relaxed ml-12">
-              Diferente das "gerações passadas" que são calculadoras rígidas, a
-              Omnitax é um Motor de Decisão Universal. Isso significa que ela
-              não apenas calcula impostos, mas audita regras de negócio,
-              concilia pagamentos e funciona como um tradutor entre sistemas
-              (TL).
+              Unlike "past generations" that are rigid calculators, Omnitax is a
+              Universal Decision Engine. This means it doesn't just calculate
+              taxes, but audits business rules, reconciles payments, and acts as
+              a system translator (TL).
             </p>
           </div>
 
@@ -996,14 +936,14 @@
               <h3
                 class="text-xl font-semibold text-gray-900 leading-tight title-text"
               >
-                Como a plataforma lida com as mudanças da Reforma Tributária?
+                How does the platform handle Tax Reform changes?
               </h3>
             </div>
             <p class="description-text text-gray-500 leading-relaxed ml-12">
-              O motor foi desenhado para a adaptação diária exigida pelos
-              próximos 7 anos de transição legislativa. Ele centraliza a
-              governança e permite alterar regras de cálculo em segundos,
-              garantindo agilidade frente aos novos requerimentos técnicos.
+              The engine was designed for the daily adaptation required by the
+              next 7 years of legislative transition. It centralizes governance
+              and allows changing calculation rules in seconds, ensuring agility
+              against new technical requirements.
             </p>
           </div>
 
@@ -1031,14 +971,13 @@
               <h3
                 class="text-xl font-semibold text-gray-900 leading-tight title-text"
               >
-                Eu preciso da equipe de TI para mudar uma regra de cálculo?
+                Do I need the IT team to change a calculation rule?
               </h3>
             </div>
             <p class="description-text text-gray-500 leading-relaxed ml-12">
-              Não. O grande diferencial da Omnitax é a Autonomia No-Code. O
-              próprio usuário da área fiscal ou tributária pode criar lógicas e
-              fórmulas em tempo real sem precisar programar ou depender do
-              departamento de TI.
+              No. Omnitax's great differentiator is No-Code Autonomy. The tax or
+              fiscal user themselves can create logic and formulas in real-time
+              without needing to program or depend on the IT department.
             </p>
           </div>
 
@@ -1066,14 +1005,14 @@
               <h3
                 class="text-xl font-semibold text-gray-900 leading-tight title-text"
               >
-                A Omnitax substitui o meu ERP atual (como SAP)?
+                Does Omnitax replace my current ERP (like SAP)?
               </h3>
             </div>
             <p class="description-text text-gray-500 leading-relaxed ml-12">
-              Não, ela o potencializa. Através de nossa API Gateway, a
-              tecnologia se integra ao seu ambiente atual (ERP, PDV ou TMS),
-              funcionando como um cérebro externo que processa eventos
-              eletrônicos em tempo real.
+              No, it empowers it. Through our API Gateway, the technology
+              integrates with your current environment (ERP, POS, or TMS),
+              acting as an external brain that processes electronic events in
+              real-time.
             </p>
           </div>
         </div>
@@ -1086,16 +1025,15 @@
           <p
             class="text-[#cd4b2d] font-bold text-sm uppercase tracking-[0.2em] mb-4"
           >
-            Depoimentos
+            Testimonials
           </p>
           <h2
             class="text-4xl md:text-5xl font-bold text-[#19213A] leading-tight"
           >
-            O que dizem os líderes do <br class="hidden md:block" />
-            <span class="text-[#cd4b2d]">futuro tributário</span>
+            What the leaders of the <br class="hidden md:block" />
+            <span class="text-[#cd4b2d]">tax future</span> say
           </h2>
         </div>
-
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
             class="bg-gray-50 p-8 rounded-3xl border border-gray-100 flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group"
@@ -1109,9 +1047,10 @@
                 <i class="fas fa-star text-[#cd4b2d]"></i>
               </div>
               <p class="text-gray-600 italic leading-relaxed mb-8">
-                "A parceria com a Omnitax nos permitiu entregar uma agilidade
-                sem precedentes ao varejo. A tecnologia de 3ª geração deles é o
-                que realmente diferencia o motor de cálculo no mercado atual."
+                "The partnership with Omnitax allowed us to deliver
+                unprecedented agility to retail. Their 3rd generation technology
+                is what truly sets the calculation engine apart in today's
+                market."
               </p>
             </div>
 
@@ -1120,21 +1059,19 @@
                 class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden flex-shrink-0"
               >
                 <img
-                  src="assets/clientes/perfil-3.jpeg"
-                  alt="Cliente"
+                  src="../assets/clientes/perfil-3.jpeg"
+                  alt="Client"
                   class="w-full h-full object-cover"
                 />
               </div>
               <div>
-                <h4 class="font-bold text-[#19213A]">
-                  Diretoria de Tecnologia
-                </h4>
+                <h4 class="font-bold text-[#19213A]">Technology Director</h4>
                 <p class="text-sm text-gray-500 uppercase font-semibold">
                   Nexaas
                 </p>
               </div>
               <img
-                src="assets/logos/nexaas-logo (escura).png"
+                src="../assets/logos/nexaas-logo (escura).png"
                 class="h-7 ml-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all"
                 alt="Logo Nexaas"
               />
@@ -1153,10 +1090,9 @@
                 <i class="fas fa-star"></i>
               </div>
               <p class="text-gray-200 italic leading-relaxed mb-8">
-                "Escalar nossa operação nacional com a Omnitax trouxe a
-                segurança fiscal que precisávamos. A automação no-code deu
-                autonomia total para nossa área tributária alterar regras em
-                segundos."
+                "Scaling our national operation with Omnitax brought the fiscal
+                security we needed. The no-code automation provided total
+                autonomy for our tax area to change rules in seconds."
               </p>
             </div>
 
@@ -1165,19 +1101,19 @@
                 class="w-12 h-12 rounded-full bg-gray-600 overflow-hidden flex-shrink-0"
               >
                 <img
-                  src="assets/clientes/perfil-1.jpeg"
-                  alt="Cliente"
+                  src="../assets/clientes/perfil-1.jpeg"
+                  alt="Client"
                   class="w-full h-full object-cover"
                 />
               </div>
               <div>
-                <h4 class="font-bold text-white">Gestão Fiscal</h4>
+                <h4 class="font-bold text-white">Tax Management</h4>
                 <p class="text-sm text-gray-400 uppercase font-semibold">
                   NIU Stefanini
                 </p>
               </div>
               <img
-                src="assets/logos/stefanini-logo.png"
+                src="../assets/logos/stefanini-logo.png"
                 class="h-7 ml-auto brightness-0 invert opacity-50 group-hover:opacity-100 transition-all"
                 alt="Logo Stefanini"
               />
@@ -1196,9 +1132,9 @@
                 <i class="fas fa-star text-[#cd4b2d]"></i>
               </div>
               <p class="text-gray-600 italic leading-relaxed mb-8">
-                "A capacidade adaptativa do motor frente à Reforma Tributária é
-                impressionante. Conseguimos centralizar a governança de cálculo
-                de forma extremamente simples e eficiente."
+                "The engine's adaptive capacity regarding Tax Reform is
+                impressive. We managed to centralize calculation governance in
+                an extremely simple and efficient way."
               </p>
             </div>
 
@@ -1207,19 +1143,19 @@
                 class="w-12 h-12 rounded-full bg-gray-200 overflow-hidden flex-shrink-0"
               >
                 <img
-                  src="assets/clientes/perfil-2.jpeg"
-                  alt="Cliente"
+                  src="../assets/clientes/perfil-2.jpeg"
+                  alt="Client"
                   class="w-full h-full object-cover"
                 />
               </div>
               <div>
-                <h4 class="font-bold text-[#19213A]">Liderança de TI</h4>
+                <h4 class="font-bold text-[#19213A]">IT Leadership</h4>
                 <p class="text-sm text-gray-500 uppercase font-semibold">
                   Americanas
                 </p>
               </div>
               <img
-                src="assets/logos/Americanas-Logo-Branca.png"
+                src="../assets/logos/Americanas-Logo-Branca.png"
                 class="h-4 ml-auto grayscale brightness-0 opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all"
                 alt="Logo Americanas"
               />
@@ -1234,12 +1170,12 @@
         <p
           class="text-sm font-medium text-white uppercase tracking-widest reveal"
         >
-          Empresas
+          Companies
         </p>
         <h2
           class="mt-2 text-3xl font-extrabold text-white sm:text-4xl reveal-right"
         >
-          QUEM CONFIA NA OMNITAX
+          WHO TRUSTS OMNITAX
         </h2>
       </div>
 
@@ -1248,140 +1184,140 @@
           class="flex items-center gap-16 px-8 animate-loopscroll flex-shrink-0"
         >
           <img
-            src="assets/logos/Americanas-Logo-Branca.png"
+            src="../assets/logos/Americanas-Logo-Branca.png"
             class="max-w-none h-12"
             alt="Americanas"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/Ammo Logo Branca.png"
+            src="../assets/logos/Ammo Logo Branca.png"
             class="max-w-none h-12"
             alt="Ammo"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/Artex Logo Branca.png"
+            src="../assets/logos/Artex Logo Branca.png"
             class="max-w-none h-12"
             alt="Artex"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/bat-logo.png"
+            src="../assets/logos/bat-logo.png"
             class="max-w-none h-12"
             alt="BAT"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/biscoite-logo.png"
+            src="../assets/logos/biscoite-logo.png"
             class="max-w-none h-12"
             alt="Biscoite"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/brk-logo.png"
+            src="../assets/logos/brk-logo.png"
             class="max-w-none h-12"
             alt="BRK"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/conteminas-logo.png"
+            src="../assets/logos/conteminas-logo.png"
             class="max-w-none h-12"
             alt="Conteminas"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/dufry-logo.png"
+            src="../assets/logos/dufry-logo.png"
             class="max-w-none h-12"
             alt="Dufry"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/estee-lauder-logo.png"
+            src="../assets/logos/estee-lauder-logo.png"
             class="max-w-none h-12"
             alt="Estee Lauder"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/lupo-logo.png"
+            src="../assets/logos/lupo-logo.png"
             class="max-w-none h-12"
             alt="Lupo"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/malwee-logo.png"
+            src="../assets/logos/malwee-logo.png"
             class="max-w-none h-12"
             alt="Malwee"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/mmartan-logo.png"
+            src="../assets/logos/mmartan-logo.png"
             class="max-w-none h-12"
             alt="Mmartan"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/mobly-logo.png"
+            src="../assets/logos/mobly-logo.png"
             class="max-w-none h-12"
             alt="Mobly"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/nexaas-logo.png"
+            src="../assets/logos/nexaas-logo.png"
             class="max-w-none h-12"
             alt="Nexaas"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/niu-logo.png"
+            src="../assets/logos/niu-logo.png"
             class="max-w-none h-12"
             alt="NIU"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/rihappy-logo.png"
+            src="../assets/logos/rihappy-logo.png"
             class="max-w-none h-12"
             alt="Ri Happy"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/sgs-logo.png"
+            src="../assets/logos/sgs-logo.png"
             class="max-w-none h-12"
             alt="SGS"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/stefanini-logo.png"
+            src="../assets/logos/stefanini-logo.png"
             class="max-w-none h-12"
             alt="Stefanini"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/waterfy-logo.png"
+            src="../assets/logos/waterfy-logo.png"
             class="max-w-none h-12"
             alt="Waterfy"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/wizos-logo.png"
+            src="../assets/logos/wizos-logo.png"
             class="max-w-none h-12"
             alt="Wizos"
             loading="lazy"
@@ -1394,140 +1330,140 @@
           aria-hidden="true"
         >
           <img
-            src="assets/logos/Americanas-Logo-Branca.png"
+            src="../assets/logos/Americanas-Logo-Branca.png"
             class="max-w-none h-12"
             alt="Americanas"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/Ammo Logo Branca.png"
+            src="../assets/logos/Ammo Logo Branca.png"
             class="max-w-none h-12"
             alt="Ammo"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/Artex Logo Branca.png"
+            src="../assets/logos/Artex Logo Branca.png"
             class="max-w-none h-12"
             alt="Artex"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/bat-logo.png"
+            src="../assets/logos/bat-logo.png"
             class="max-w-none h-12"
             alt="BAT"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/biscoite-logo.png"
+            src="../assets/logos/biscoite-logo.png"
             class="max-w-none h-12"
             alt="Biscoite"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/brk-logo.png"
+            src="../assets/logos/brk-logo.png"
             class="max-w-none h-12"
             alt="BRK"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/conteminas-logo.png"
+            src="../assets/logos/conteminas-logo.png"
             class="max-w-none h-12"
             alt="Conteminas"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/dufry-logo.png"
+            src="../assets/logos/dufry-logo.png"
             class="max-w-none h-12"
             alt="Dufry"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/estee-lauder-logo.png"
+            src="../assets/logos/estee-lauder-logo.png"
             class="max-w-none h-12"
             alt="Estee Lauder"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/lupo-logo.png"
+            src="../assets/logos/lupo-logo.png"
             class="max-w-none h-12"
             alt="Lupo"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/malwee-logo.png"
+            src="../assets/logos/malwee-logo.png"
             class="max-w-none h-12"
             alt="Malwee"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/mmartan-logo.png"
+            src="../assets/logos/mmartan-logo.png"
             class="max-w-none h-12"
             alt="Mmartan"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/mobly-logo.png"
+            src="../assets/logos/mobly-logo.png"
             class="max-w-none h-12"
             alt="Mobly"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/nexaas-logo.png"
+            src="../assets/logos/nexaas-logo.png"
             class="max-w-none h-12"
             alt="Nexaas"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/niu-logo.png"
+            src="../assets/logos/niu-logo.png"
             class="max-w-none h-12"
             alt="NIU"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/rihappy-logo.png"
+            src="../assets/logos/rihappy-logo.png"
             class="max-w-none h-12"
             alt="Ri Happy"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/sgs-logo.png"
+            src="../assets/logos/sgs-logo.png"
             class="max-w-none h-12"
             alt="SGS"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/stefanini-logo.png"
+            src="../assets/logos/stefanini-logo.png"
             class="max-w-none h-12"
             alt="Stefanini"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/waterfy-logo.png"
+            src="../assets/logos/waterfy-logo.png"
             class="max-w-none h-12"
             alt="Waterfy"
             loading="lazy"
             decoding="async"
           />
           <img
-            src="assets/logos/wizos-logo.png"
+            src="../assets/logos/wizos-logo.png"
             class="max-w-none h-12"
             alt="Wizos"
             loading="lazy"
@@ -1541,37 +1477,27 @@
       id="form"
       class="relative py-20 bg-[linear-gradient(135deg,#0E0E0F_0%,#19213A_50%,#E85938_100%)] overflow-hidden font-['Open_Sans']"
     >
-      <div
-        class="absolute top-1/2 right-[-10%] -translate-y-1/2 w-[600px] h-[600px] bg-[#cd4b2d] blur-[150px] opacity-20 pointer-events-none"
-      ></div>
-
       <div class="reveal max-w-7xl mx-auto px-6 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div class="flex">
             <div class="w-[2px] bg-[#cd4b2d] self-stretch mr-8 md:mr-12"></div>
-
             <div class="max-w-xl">
               <h2
                 class="text-white text-4xl md:text-[42px] leading-[1.1] font-light"
               >
-                Transforme a
-                <span class="text-[#cd4b2d] font-bold">gestão</span><br />
-                <span class="text-[#cd4b2d] font-bold">tributária</span> do seu
-                negócio<br />
-                com a <span class="text-[#cd4b2d] font-bold">Omnitax</span>
+                Transform your business
+                <span class="text-[#cd4b2d] font-bold">tax</span>
+                <span class="text-[#cd4b2d] font-bold">management</span> with
+                <span class="text-[#cd4b2d] font-bold">Omnitax</span>
               </h2>
-
               <p
                 class="text-white mt-10 text-lg md:text-[19px] leading-snug opacity-90"
               >
-                Agende uma demonstração<br />
-                com um dos nossos especialistas<br />
-                e descubra como podemos ajudar<br />
-                sua empresa!
+                Schedule a demo with one of our specialists and discover how we
+                can help your company!
               </p>
             </div>
           </div>
-
           <div
             class="bg-[#19213A] p-8 md:p-10 rounded-2xl shadow-2xl border border-white/5"
           >
@@ -1579,181 +1505,175 @@
               <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label class="block text-white text-xs mb-1 px-2"
-                    >Nome<span class="text-[#cd4b2d]">*</span></label
+                    >Name<span class="text-[#cd4b2d]">*</span></label
                   >
                   <input
                     type="text"
-                    placeholder="Digite seu nome"
+                    placeholder="Enter your name"
                     class="w-full bg-white rounded-[12px] px-4 py-2 text-sm text-gray-800 outline-none"
                   />
                 </div>
+
                 <div>
                   <label class="block text-white text-xs mb-1 px-2"
-                    >E-mail Corporativo<span class="text-[#cd4b2d]"
+                    >Corporate E-mail<span class="text-[#cd4b2d]"
                       >*</span
                     ></label
                   >
                   <input
                     type="email"
-                    placeholder="Ex: nome@suaempresa.com"
+                    placeholder="Ex: name@yourcompany.com"
                     class="w-full bg-white rounded-[12px] px-4 py-2 text-sm text-gray-800 outline-none"
                   />
                 </div>
+
                 <div>
                   <label class="block text-white text-xs mb-1 px-2"
-                    >Empresa<span class="text-[#cd4b2d]">*</span></label
+                    >Company<span class="text-[#cd4b2d]">*</span></label
                   >
                   <input
                     type="text"
-                    placeholder="Digite o nome da empresa"
+                    placeholder="Enter company name"
                     class="w-full bg-white rounded-[12px] px-4 py-2 text-sm text-gray-800 outline-none"
                   />
                 </div>
+
                 <div>
                   <label class="block text-white text-xs mb-1 px-2"
-                    >Cargo<span class="text-[#cd4b2d]">*</span></label
+                    >Job Title<span class="text-[#cd4b2d]">*</span></label
                   >
                   <input
                     type="text"
-                    placeholder="Digite seu cargo"
+                    placeholder="Enter your position"
                     class="w-full bg-white rounded-[12px] px-4 py-2 text-sm text-gray-800 outline-none"
                   />
                 </div>
+
                 <div>
                   <label class="block text-white text-xs mb-1 px-2"
-                    >Telefone/WhatsApp<span class="text-[#cd4b2d]"
-                      >*</span
-                    ></label
+                    >Phone/WhatsApp<span class="text-[#cd4b2d]">*</span></label
                   >
                   <input
                     type="tel"
-                    placeholder="Digite seu telefone"
+                    placeholder="Enter your phone number"
                     class="w-full bg-white rounded-[12px] px-4 py-2 text-sm text-gray-800 outline-none"
                   />
                 </div>
+
                 <div>
                   <label class="block text-white text-xs mb-1 px-2"
-                    >Segmento da Empresa<span class="text-[#cd4b2d]"
+                    >Business Segment<span class="text-[#cd4b2d]"
                       >*</span
                     ></label
                   >
                   <select
                     class="w-full bg-white rounded-[12px] px-4 py-2 text-sm text-gray-800 outline-none"
                   >
-                    <option value="agronegocios">Agronegócios</option>
-                    <option value="atacado">Atacado</option>
-                    <option value="comex">Comex</option>
-                    <option value="construcao-civil">Construção Civil</option>
-                    <option value="distribuidora">Distribuidora</option>
-                    <option value="educacao">Educação</option>
-                    <option value="energia">Energia</option>
-                    <option value="entretenimento-e-eventos">
-                      Entretenimento e Eventos
+                    <option value="agribusiness">Agribusiness</option>
+                    <option value="wholesale">Wholesale</option>
+                    <option value="comex">Foreign Trade (Comex)</option>
+                    <option value="construction">Civil Construction</option>
+                    <option value="distribution">Distributor</option>
+                    <option value="education">Education</option>
+                    <option value="energy">Energy</option>
+                    <option value="entertainment">
+                      Entertainment & Events
                     </option>
-                    <option value="esportes-e-lazer">Esportes e Lazer</option>
-                    <option value="financeiro">Financeiro</option>
+                    <option value="sports">Sports & Leisure</option>
+                    <option value="finance">Finance</option>
                     <option value="full-commerce">Full Commerce</option>
                     <option value="holding">Holding</option>
-                    <option value="imobiliario-e-incorporacao">
-                      Imobiliário e Incorporação
+                    <option value="real-estate">
+                      Real Estate & Development
                     </option>
-                    <option value="industria-automobilistica">
-                      Indústria Automobilística
+                    <option value="automotive">Automotive Industry</option>
+                    <option value="food-industry">Food Industry</option>
+                    <option value="cosmetics">Cosmetics Industry</option>
+                    <option value="pharma">Pharmaceutical Industry</option>
+                    <option value="textile">Textile/Fashion Industry</option>
+                    <option value="financial-institution">
+                      Financial Institution
                     </option>
-                    <option value="industria-de-alimentos">
-                      Indústria de Alimentos
-                    </option>
-                    <option value="industria-de-cosmetico">
-                      Indústria de Cosmético
-                    </option>
-                    <option value="industria-de-medicamentos">
-                      Indústria de Medicamentos
-                    </option>
-                    <option value="industria-textil-moda">
-                      Indústria Têxtil/Moda
-                    </option>
-                    <option value="instituicao-financeira">
-                      Instituição Financeira
-                    </option>
-                    <option value="juridico">Jurídico</option>
-                    <option value="logistica">Logística</option>
-                    <option value="marketing-publicidade-midia">
-                      Marketing/Publicidade/Mídia
+                    <option value="legal">Legal</option>
+                    <option value="logistics">Logistics</option>
+                    <option value="marketing">
+                      Marketing/Advertising/Media
                     </option>
                     <option value="marketplace">Marketplace</option>
-                    <option value="mineracao">Mineração</option>
-                    <option value="saude-e-bem-estar">Saúde e Bem-Estar</option>
-                    <option value="seguranca-e-monitoramento">
-                      Segurança e Monitoramento
+                    <option value="mining">Mining</option>
+                    <option value="health">Health & Wellness</option>
+                    <option value="security">Security & Monitoring</option>
+                    <option value="air-transport">
+                      Air Transport Services
                     </option>
-                    <option value="servicos-de-transporte-aereo">
-                      Serviços de Transporte Aéreo
+                    <option value="it">Information Technology (IT)</option>
+                    <option value="telecom">Telecommunications</option>
+                    <option value="transport">Transportation Company</option>
+                    <option value="tourism">Tourism & Hospitality</option>
+                    <option value="food-retail">Food Retail</option>
+                    <option value="home-retail">
+                      Home & Construction Retail
                     </option>
-                    <option value="tecnologia-da-informacao">
-                      Tecnologia da Informação (TI)
+                    <option value="auto-parts">Auto Parts Retail</option>
+                    <option value="cosmetic-retail">Cosmetics Retail</option>
+                    <option value="drugstore">Pharmacy/Drugstore Retail</option>
+                    <option value="fashion-retail">Fashion Retail</option>
+                    <option value="petshop">Petshop Retail</option>
+                    <option value="electronics">Electronics Retail</option>
+                    <option value="multichannel">
+                      Multichannel/Multi-product Retail
                     </option>
-                    <option value="telecomunicacoes">Telecomunicações</option>
-                    <option value="transportadora">Transportadora</option>
-                    <option value="turismo-e-hospitalidade">
-                      Turismo e Hospitalidade
-                    </option>
-                    <option value="varejo-alimentos">Varejo Alimentos</option>
-                    <option value="varejo-casa-construcao">
-                      Varejo Casa & Construção
-                    </option>
-                    <option value="varejo-de-autopecas">
-                      Varejo de Autopeças
-                    </option>
-                    <option value="varejo-de-cosmetico">
-                      Varejo de Cosmético
-                    </option>
-                    <option value="varejo-de-medicamentos">
-                      Varejo de Medicamentos
-                    </option>
-                    <option value="varejo-de-moda">Varejo de Moda</option>
-                    <option value="varejo-de-petshop">Varejo de Petshop</option>
-                    <option value="varejo-eletronicos">
-                      Varejo Eletrônicos
-                    </option>
-                    <option value="varejo-multicanal-multiprodutos">
-                      Varejo Multicanal/Multiprodutos
-                    </option>
-                    <option value="outros">Outros</option>
+                    <option value="others">Others</option>
                   </select>
                 </div>
+
                 <div>
                   <label class="block text-white text-xs mb-1 px-2"
-                    >Faturamento Anual<span class="text-[#cd4b2d]"
+                    >Annual Revenue<span class="text-[#cd4b2d]">*</span></label
+                  >
+                  <select
+                    class="w-full bg-white rounded-[12px] px-4 py-2 text-sm text-gray-800 outline-none"
+                  >
+                    <option>Under $5M</option>
+                    <option>$5M to $20M</option>
+                    <option>$20M to $70M</option>
+                    <option>$70M to $150M</option>
+                    <option>$150M to $200M</option>
+                    <option>$200M to $1B</option>
+                    <option>$1B to $2B</option>
+                    <option>$2B to $6B</option>
+                    <option>$6B to $20B</option>
+                    <option>Above $20B</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-white text-xs mb-1 pl-1"
+                    >Is the company ready for Tax Reform?<span
+                      class="text-[#cd4b2d]"
                       >*</span
                     ></label
                   >
                   <select
                     class="w-full bg-white rounded-[12px] px-4 py-2 text-sm text-gray-800 outline-none"
                   >
-                    <option>R$ 0 a R$ 30M</option>
-                    <option>R$ 30 a R$ 100M</option>
-                    <option>R$ 100 a R$ 350M</option>
-                    <option>R$ 350 a R$ 750M</option>
-                    <option>R$ 750 a R$ 1Bi</option>
-                    <option>R$ 1 a R$ 5Bi</option>
-                    <option>R$ 5 a R$ 10Bi</option>
-                    <option>R$ 10 a R$ 30Bi</option>
-                    <option>R$ 30Bi a R$ 100Bi</option>
-                    <option>Acima de R$ 100Bi</option>
+                    <option>Yes</option>
+                    <option>No</option>
                   </select>
                 </div>
-                <div>
-                  <label class="block text-white text-xs mb-1"
-                    >Qual ERP utiliza?<span class="text-[#cd4b2d]"
-                      >*</span
-                    ></label
-                  >
-                  <input
-                    type="text"
-                    placeholder="Nome da tecnologia utilizada"
-                    class="w-full max-w-xs mx-auto bg-white rounded-[12px] px-4 py-2 text-sm text-gray-800 outline-none block"
-                  />
-                </div>
+              </div>
+
+              <div class="text-center">
+                <label class="block text-white text-xs mb-1"
+                  >Which ERP do you use?<span class="text-[#cd4b2d]"
+                    >*</span
+                  ></label
+                >
+                <input
+                  type="text"
+                  placeholder="Name of the technology used"
+                  class="w-full max-w-xs mx-auto bg-white rounded-[12px] px-4 py-2 text-sm text-gray-800 outline-none block"
+                />
               </div>
 
               <div class="flex justify-center pt-2">
@@ -1761,7 +1681,7 @@
                   type="submit"
                   class="bg-[#cd4b2d] text-white font-bold px-12 py-2 rounded-[12px] hover:brightness-110 transition-all text-sm"
                 >
-                  Enviar
+                  Send
                 </button>
               </div>
             </form>
@@ -1822,10 +1742,9 @@
                 <a
                   href="https://www.omnitax.ai/sobre-nos"
                   class="hover:text-white transition-colors underline decoration-1 underline-offset-4"
-                  >Por que nós?</a
+                  >Why us?</a
                 >
               </li>
-
               <li>
                 <a
                   href="https://www.omnitax.ai/bastidores-do-tributo"
@@ -1835,29 +1754,29 @@
               </li>
               <li>
                 <a
-                  href="contato.html"
+                  href="#form"
                   class="hover:text-white transition-colors underline decoration-1 underline-offset-4"
-                  >Agende uma demo</a
+                  >Book a demo</a
                 >
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 class="text-xl font-bold mb-6">Soluções</h4>
+            <h4 class="text-xl font-bold mb-6">Solutions</h4>
             <ul class="space-y-4 text-gray-300">
               <li>
                 <a
                   href="https://www.omnitax.ai/solucoes-fiscais-inteligentes"
                   class="hover:text-white transition-colors underline decoration-1 underline-offset-4 block md:text-left"
-                  >Motor de Cálculo</a
+                  >Calculation Engine</a
                 >
               </li>
               <li>
                 <a
                   href="https://www.omnitax.ai/conformidade-fiscal-com-automacao"
                   class="hover:text-white transition-colors underline decoration-1 underline-offset-4 block md:text-left leading-tight"
-                  >Motor de Emissão e Recepção</a
+                  >Issuance and Reception Engine</a
                 >
               </li>
             </ul>
@@ -1865,30 +1784,30 @@
 
           <div class="space-y-8">
             <div>
-              <h4 class="text-xl font-bold mb-6">Endereços</h4>
+              <h4 class="text-xl font-bold mb-6">Addresses</h4>
               <div class="flex items-start space-x-3 text-gray-300">
                 <i class="fas fa-map-marker-alt mt-1 text-sm"></i>
                 <p class="text-sm leading-relaxed">
-                  Rua do Rócio, 199 – Vila Olímpia – SP
+                  Rócio St, 199 – Vila Olímpia – São Paulo, Brazil
                 </p>
               </div>
               <div class="flex items-start space-x-3 text-gray-300 mt-4">
                 <i class="fas fa-map-marker-alt mt-1 text-sm"></i>
                 <p class="text-sm leading-relaxed">
-                  Rua do Carmo, 43 – Centro – RJ
+                  Carmo St, 43 – Downtown – Rio de Janeiro, Brazil
                 </p>
               </div>
             </div>
 
             <div>
-              <h4 class="text-xl font-bold mb-6">Contato</h4>
+              <h4 class="text-xl font-bold mb-6">Contact</h4>
               <div class="space-y-4">
                 <div class="flex items-center space-x-3 text-gray-300">
                   <i class="far fa-envelope text-sm"></i>
                   <a
                     href="mailto:contato@omnitax.ai"
                     class="text-sm hover:text-white transition-colors underline"
-                    >contato@omnitax.ai</a
+                    >contact@omnitax.ai</a
                   >
                 </div>
                 <div class="flex items-center space-x-3 text-gray-300">
@@ -1908,34 +1827,58 @@
           <p
             class="text-[10px] md:text-xs text-gray-400 font-bold uppercase tracking-widest"
           >
-            © 2026 OMNITAX SOFTWARE LTDA – CNPJ: 32.403.309/0001-19 – TODOS OS
-            DIREITOS RESERVADOS
+            © 2026 OMNITAX SOFTWARE LTDA – TAX ID: 32.403.309/0001-19 – ALL
+            RIGHTS RESERVED
           </p>
         </div>
       </div>
     </footer>
 
-    <!-- Typed.js -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
     <script>
-      // Animação trocar palavras
       new Typed(".auto-type", {
-        strings: ["negócio", "processo", "modelo", "segmento", "contexto"],
+        strings: ["business", "process", "model", "segment", "context"],
         typeSpeed: 150,
         backSpeed: 150,
         loop: true,
       });
-
-      // Chatbase Lazy Load: Carrega apenas após a interação ou 3 segundos para não travar o Main Thread
-      setTimeout(() => {
-        const script = document.createElement("script");
-        script.src = "https://www.chatbase.co/embed.min.js";
-        script.id = "QUxIXv40kx53MO3tQ3bY_";
-        document.body.appendChild(script);
-      }, 3500);
     </script>
 
-    <script src="animation.js" defer></script>
-    <script src="menu-mobile.js" defer></script>
+    <script>
+      (function () {
+        if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+          window.chatbase = (...arguments) => {
+            if (!window.chatbase.q) {
+              window.chatbase.q = [];
+            }
+            window.chatbase.q.push(arguments);
+          };
+          window.chatbase = new Proxy(window.chatbase, {
+            get(target, prop) {
+              if (prop === "q") {
+                return target.q;
+              }
+              return (...args) => target(prop, ...args);
+            },
+          });
+        }
+        const onLoad = function () {
+          const script = document.createElement("script");
+          script.src = "https://www.chatbase.co/embed.min.js";
+          script.id = "QUxIXv40kx53MO3tQ3bY_";
+          script.domain = "www.chatbase.co";
+          document.body.appendChild(script);
+        };
+        if (document.readyState === "complete") {
+          onLoad();
+        } else {
+          window.addEventListener("load", onLoad);
+        }
+      })();
+    </script>
+
+    <script src="../animation.js" defer></script>
+    <script src="../menu-mobile.js" defer></script>
   </body>
 </html>
