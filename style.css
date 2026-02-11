@@ -179,7 +179,7 @@ body {
   height: auto;
   min-height: 600px;
   background-color: #fff;
-  background-image: -webkit-linear-gradient(30deg, #fff 50%, #cd4b2d 50%);
+  background-image: -webkit-linear-gradient(30deg, #fff 50%, #e85938 50.1%);
 }
 
 .diagonal-2 {
@@ -188,7 +188,7 @@ body {
   height: auto;
   min-height: 600px;
   background-color: #fff;
-  background-image: -webkit-linear-gradient(-30deg, #cd4b2d 52%, #fff 50%);
+  background-image: -webkit-linear-gradient(-30deg, #e85938 52%, #fff 50.1%);
 }
 
 .diagonal-3 {
