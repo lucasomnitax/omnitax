@@ -81,17 +81,20 @@ cards.forEach((card) => {
   });
 });
 
-// Navbar transparente
+// Navbar transparente com altura fixa
 window.addEventListener("scroll", function () {
   const nav = document.getElementById("main-nav");
   if (window.scrollY > 50) {
-    // Se rolar mais de 50px
-    nav.style.backgroundColor = "#19213A";
-    nav.classList.add("py-3", "shadow-lg"); // Deixa a nav um pouco mais fina ao rolar
+    // Se rolar mais de 50px - Muda a cor e adiciona sombra, mas mantém py-5
+    nav.style.backgroundColor = "#334376";
+    nav.classList.add("shadow-lg"); 
+    nav.classList.remove("py-3"); // Removemos a mudança para py-3
+    nav.classList.add("py-5");    // Garantimos que continue py-5
   } else {
-    nav.style.backgroundColor = "rgba(0, 0, 0, 0.0)"; // Volta ao bg-black/20
+    // Ao voltar para o topo
+    nav.style.backgroundColor = "rgba(0, 0, 0, 0.0)";
+    nav.classList.remove("shadow-lg");
     nav.classList.add("py-5");
-    nav.classList.remove("py-3", "shadow-lg");
   }
 });
 
@@ -199,3 +202,29 @@ document.addEventListener("DOMContentLoaded", function () {
   const target = document.querySelector("#bar-payment").closest("section");
   if (target) observer.observe(target);
 });
+
+let activeStep = 1;
+  const totalSteps = 3;
+
+  function rotateBenefits() {
+    // Reset cards e navs
+    document.querySelectorAll('.benefit-card').forEach(c => {
+      c.classList.replace('opacity-100', 'opacity-0');
+      c.classList.replace('scale-100', 'scale-95');
+      c.style.pointerEvents = 'none';
+    });
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+
+    // Ativa atual
+    const currentCard = document.getElementById(`card-${activeStep}`);
+    currentCard.classList.replace('opacity-0', 'opacity-100');
+    currentCard.classList.replace('scale-95', 'scale-100');
+    currentCard.style.pointerEvents = 'auto';
+    
+    document.getElementById(`nav-${activeStep}`).classList.add('active');
+
+    activeStep = activeStep >= totalSteps ? 1 : activeStep + 1;
+  }
+
+  // Troca a cada 4 segundos
+  setInterval(rotateBenefits, 6000);
