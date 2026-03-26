@@ -81,22 +81,6 @@ cards.forEach((card) => {
   });
 });
 
-// Navbar transparente com altura fixa
-window.addEventListener("scroll", function () {
-  const nav = document.getElementById("main-nav");
-  if (window.scrollY > 50) {
-    // Se rolar mais de 50px - Muda a cor e adiciona sombra, mas mantém py-5
-    nav.style.backgroundColor = "#334376";
-    nav.classList.add("shadow-lg"); 
-    nav.classList.remove("py-3"); // Removemos a mudança para py-3
-    nav.classList.add("py-5");    // Garantimos que continue py-5
-  } else {
-    // Ao voltar para o topo
-    nav.style.backgroundColor = "rgba(0, 0, 0, 0.0)";
-    nav.classList.remove("shadow-lg");
-    nav.classList.add("py-5");
-  }
-});
 
 // Animacao Tela
 function showPainel(id) {
